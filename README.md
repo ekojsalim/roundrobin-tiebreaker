@@ -50,8 +50,7 @@ For a sketch illustration of the first and second tiebreak rule:
 
 ### Good references
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-nlI33r-P70" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+- https://www.youtube.com/watch?v=-nlI33r-P70
 - https://github.com/dtonhofer/prolog_notes
 
 ### The argument mode indicator
@@ -118,10 +117,6 @@ Adding the `label([X, Y])` would yield the same result as the between one.
 Now, we also have an `ins` operator, which is a domain specifying operator, and different with the `in` that is an iterator like object.
 
 For a better overview, please do read https://github.com/Anniepoo/swiplclpfd/blob/master/clpfd.adoc as a reference.
-
-### The maplist
-
-
 
 ### Extra Future Reference
 
