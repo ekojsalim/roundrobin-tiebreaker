@@ -3,12 +3,22 @@
 :- use_module(library(clpz)).
 :- use_module(library(reif)).
 :- use_module(library(pairs)).
-:- use_module(library(tabling)).
+:- use_module(library(ordsets)).
+:- use_module(library(si)).
 :- use_module(library(format)).
 :- use_module(library(debug)).
+:- use_module(library(time)).
 
-:- meta_predicate sort_group_by_predicate(4, ?, ?, ?).
+:- meta_predicate specific_value(3, ?, ?, ?).
+:- dynamic(memo_/1).
 
+memo(Goal) :-
+    (memo_(Goal) ->
+        true;
+        (once(Goal), assertz(memo_(Goal)))
+    ).
+
+% Data
 team(1, ence).
 team(2, faze).
 team(3, furia).
@@ -19,24 +29,42 @@ team(6, vitality).
 teams(L) :- findall(X, team(_, X), L).
 
 results([[1, 2, 1, 2, 1],
-    [1, 3, 3, 2, 1],
+    [1, 3, _, _, _],
     [1, 4, 1, 2, 0],
     [1, 5, _, _, _],
     [1, 6, 1, 2, 0],
     [2, 3, _, _, _],
     [2, 4, 4, 2, 0],
     [2, 5, 2, 2, 0],
-    [2, 6, 2, 2, 0],
+    [2, 6, _, _, _],
     [3, 4, 3, 2, 1],
     [3, 5, 3, 2, 0],
     [3, 6, 3, 2, 1],
-    [4, 5, 4, 2, 1],
+    [4, 5, _, _, _],
     [4, 6, _, _, _],
     [5, 6, 6, 2, 0]]).
 
+% results([[1, 2, 1, 2, 1],
+%     [1, 3, 3, 2, 1],
+%     [1, 4, 1, 2, 0],
+%     [1, 5, 1, 2, 1],
+%     [1, 6, 1, 2, 0],
+%     [2, 3, 2, 2, 1],
+%     [2, 4, 4, 2, 0],
+%     [2, 5, 2, 2, 0],
+%     [2, 6, 2, 2, 0],
+%     [3, 4, 3, 2, 1],
+%     [3, 5, 3, 2, 0],
+%     [3, 6, 3, 2, 1],
+%     [4, 5, 4, 2, 1],
+%     [4, 6, 6, 2, 0],
+%     [5, 6, 6, 2, 0]]).
+
+result(R) :- results(Rs), member(R, Rs).
+instantiated_result(Rs) :- setof(R, (result(R), ground(R)), Rs).
 
 valid_result(R) :-
-    R = [T1, T2, W, S1, S2],
+    R = [T1, T2, W, S1, S2 | _],
     R ins 0..47,
     % matchup
     [T1, T2] ins 1..6,
@@ -46,105 +74,92 @@ valid_result(R) :-
     % set score
     S1 #= 2,
     S2 in 0..1.
-%     % round score
-%     R1 #> R2,
-%     R1 #>= 16 * S1, R2 #>= 16 * S2,
-%     R1 #=< 16 * S1 + 15 * S2, R2 #=< 16 * S2 + 15 * S1.
 
 valid_results(Rs) :-
     length(Rs, 15),
     maplist(valid_result, Rs).
 
-% tiebreaking
-% 1. Points amassed between the tied participants (direct match win > direct match loss)
-% 2. Map difference between the tied participants (3:2 maps > 3:3 maps)
-% 3. Number of map wins between the tied participants (3:3 maps > 2:2 maps)
-% 4. Overall map difference
-% 5. Overall number of map wins
-% 6. Round score difference between the tied participants (23:21 > 23:22)
-% 7. Number of round wins between the tied participants (24:22 > 23:21)
-% 8. Overall round score difference (39:31 > 40:33)
-% 9. Overall number of round wins (40:32 > 39:31)
-% recursive sorting using multiple predicates
+% metapredicate for abstracting away tiebreaking value logic
+% specific_value(ValuePredicate, TeamList, Results, Team, Value)
+relevant_result(Ts, [T1, T2 | _], T) :- call((memberd_t(T1, Ts), memberd_t(T2, Ts)), T).
+relevant_results(Ts, Rs, RRs) :- tfilter(relevant_result(Ts), Rs, RRs).
 
-sort_group_by_predicate(P, Ts, Rs, Gs) :-
-    % Goal =.. [P, Ts, Rs], % predicate with Ts & Rs as args too
-    maplist(P, Ts, Vs),
+specific_value(VP, Ts, Rs, T, V) :-
+    memo(relevant_results(Ts, Rs, RRs)),
+    maplist(call(VP, T), RRs, Vs),
+    sum(Vs, #=, V).
+
+overall_value(VP, _, Rs, T, V) :- overall_value(VP, Rs, T, V).
+overall_value(VP, Rs, T, V) :-
+    maplist(call(VP, T), Rs, Vs),
+    sum(Vs, #=,  V).
+
+point(T, R, V) :-
+    R = [_, _, W | _],
+    if_(W #= T, V #= 3, V #= 0).
+
+map_difference(T, R, V) :-
+    R = [T1, T2, W, S1, S2 | _],
+    if_((T #= T1 ; T #= T2),
+        if_(W #= T,
+            V #= S1 - S2,
+            V #= S2 - S1),
+        V #= 0).
+    
+map_win(T, R, V) :-
+    R = [T1, T2, W, S1, S2 | _],
+    if_((T #= T1 ; T #= T2),
+        if_(W #= T,
+            V #= S1,
+            V #= S2),
+        V #= 0).
+
+% round_difference(T, R, V) :-
+%     R = [T1, T2, W, _, _, R1, R2 | _],
+%     if_((T #= T1 ; T #= T2),
+%         if_(W #= T,
+%             V #= R1 - R2,
+%             V #= R2 - R2),
+%         V #= 0).
+            
+% round_win(T, R, V) :-
+%     R = [T1, T2, W, _, _, R1, R2 | _],
+%     if_((T #= T1 ; T #= T2),
+%         if_(W #= T,
+%             V #= R1,
+%             V #= R2),
+%         V #= 0).
+    
+
+% tibreaking logic
+% tiebreakers([specific_points, specific_map_difference, specific_map_wins, overall_map_difference, overall_map_wins]).
+tiebreakers([specific_value(point), specific_value(map_difference), specific_value(map_win), overall_value(map_difference), overall_value(map_win)]).
+
+team_sort(VP, Ts, Rs, Gs) :-
+    maplist(call(VP, Ts, Rs), Ts, Vs),
+    label(Vs),
     pairs_keys_values(TVPairs, Vs, Ts),
-    % map_list_to_pairs(Goal, Ts, TVPairs),
     keysort(TVPairs, SortedTVPairs),
     group_pairs_by_key(SortedTVPairs, GroupedTVPairs),
     pairs_values(GroupedTVPairs, Gs).
 
-% tiebreaking logic
-% do initial sorting with overall_points
-% do untied check, if untied then done
-% else -> call subgroup_sort on the tied subgroups
-% if subgroup_sort resolves a tie, reset the tiebreakers predicates (important)
+tiebreaking_team_sort([], _, _, []).
+tiebreaking_team_sort(Ts, Rs, Ps, Os) :-
+    team_sort(overall_value(point), Ts, Rs, Gs),
+    maplist(tiebreaking_subgroup_sort(Rs, Ps), Gs, Os).
 
-tiebreakers([specific_points, specific_map_difference, specific_map_wins, overall_map_difference, overall_map_wins]).
-
-sort_group_by_goal(P, Ts, Rs, Gs) :-
-    Goal =.. [P, Ts, Rs],
-    sort_group_by_predicate(Goal, Ts, Rs, Gs).
-
-tiebreaking_sort([], _, _, []).
-tiebreaking_sort(Ts, Rs, Ps, Os) :-
-    sort_group_by_goal(overall_points, Ts, Rs, Gs),
-    maplist(tiebreaking_sort_group(Rs, Ps), Gs, Os).
-
-tiebreaking_sort_group(_, _, [X], [X]).
-tiebreaking_sort_group(Rs, [P|Ps], G, O) :-
-    length(G, LG),
-    LG > 1,
-    sort_group_by_goal(P, G, Rs, SG),
+tiebreaking_subgroup_sort(_, _, [T], [T]) :- integer_si(T).
+tiebreaking_subgroup_sort(Rs, [P|Ps], G, O) :-
+    length(G, LG), LG > 1,
+    team_sort(P, G, Rs, SG),
     length(SG, LSG),
-    if_(1 #< LSG, % if the predicate resolves a tie (determined by length)
-        (tiebreakers(TPs),
-            maplist(tiebreaking_sort_group(Rs, TPs), SG, O) % reset the predicates used
-        ),
-        maplist(tiebreaking_sort_group(Rs, Ps), SG, O) % use remaining predicates
+    if_(1 #< LSG, ( % if the predicate resolves a tie (determined by length), it will split the existing groups into >1 part
+            tiebreakers(TPs),
+            maplist(tiebreaking_subgroup_sort(Rs, TPs), SG, O)), % reset the predicates used
+        maplist(tiebreaking_subgroup_sort(Rs, Ps), SG, O) % use remaining predicates
         ).
 
-% the actual tiebreaking predicates
-overall_points(_, Rs, T, V) :- overall_points(Rs, T, V).
-overall_points(Rs, T, V) :- specific_points([1,2,3,4,5,6], Rs, T, V).
-specific_points(_, [], _, 0).
-specific_points(Ts, [R | Rs], T, V0) :-
-    R = [T1, T2, W | _],
-    if_((W #= T, memberd_t(T1, Ts), memberd_t(T2, Ts))
-    , V0 #= V + 3
-    , V0 #= V
-    ),
-    specific_points(Ts, Rs, T, V).
-
-overall_map_difference(_, Rs, T, V) :- specific_map_difference([1,2,3,4,5,6], Rs, T, V).
-specific_map_difference(_, [], _, 0).
-specific_map_difference(Ts, [R | Rs], T, V0) :-
-    R = [T1, T2, W, S1, S2 | _],
-    if_(((T #= T1 ; T #= T2), memberd_t(T1, Ts), memberd_t(T2, Ts))
-    , if_(W #= T
-        , V #= V0 - (S1 - S2)
-        , V #= V0 - (S2 - S1))
-    % ,(Z #<==> W #= T,
-    %   V #= V0 - (2 * Z - 1) * (S1 - S2)
-    %  )
-    , V0 #= V
-    ),
-    specific_map_difference(Ts, Rs, T, V).
-
-overall_map_wins(_, Rs, T, V) :- specific_map_wins([1,2,3,4,5,6], Rs, T, V).
-specific_map_wins(_, [], _, 0).
-specific_map_wins(Ts, [R | Rs], T, V0) :-
-    R = [T1, T2, W, S1, S2 | _],
-    if_(((T #= T1 ; T #= T2), memberd_t(T1, Ts), memberd_t(T2, Ts))
-    , if_(W #= T
-        , V #= V0 - S1
-        , V #= V0 - S2)
-    , V0 #= V
-    ),
-    specific_map_wins(Ts, Rs, T, V).
-
+% helper
 flatten([],[]).
 flatten([Head|Tail],R) :-
 	flatten(Head,New_Head),
@@ -155,47 +170,18 @@ flatten([Head|Tail1], [Head|Tail2]) :-
 	Head \= [_|_],
     flatten(Tail1,Tail2).
 
-standings(S) :-
+
+% high level predicates
+standings(S, Rs) :-
     results(Rs),
     valid_results(Rs),
     tiebreakers(Ps),
-    maplist(labeling([ffc, enum]), Rs),
-    tiebreaking_sort([1,2,3,4,5,6], Rs, Ps, Os),
-    flatten(Os, FOS),
-    reverse(FOS, S),
-    maplist(portray_clause, Rs).
-    % maplist(\X^Y^(team(X, Y)), SI, S).
+    tiebreaking_team_sort([1,2,3,4,5,6], Rs, Ps, Os),
+    flatten(Os, FOs),
+    reverse(FOs, S).
 
-qualify(T) :-
+qualify(T, Rs) :-
+    standings(S, Rs),
     team(Id, T),
-    results(Rs),
-    valid_results(Rs),
-    tiebreakers(Ps),
-    maplist(label, Rs),
-    tiebreaking_sort([1,2,3,4,5,6], Rs, Ps, Os),
-    flatten(Os, FOS),
-    reverse(FOS, S),
     Index in 1..3,
-    element(Index, S, Id),
-    portray_clause(S),
-    maplist(portray_clause, Rs).
-
-qualify(T, Ms) :-
-    team(Id, T),
-    results(Rs),
-    valid_results(Rs),
-    tiebreakers(Ps),
-    maplist(label, Rs),
-    tiebreaking_sort([1,2,3,4,5,6], Rs, Ps, Os),
-    flatten(Os, FOS),
-    reverse(FOS, S),
-    Index in 1..3,
-    element(Index, S, Id),
-    Ms = Rs.
-
-temp(Ms) :-
-    results(Rs),
-    valid_results(Rs),
-    tiebreakers(Ps),
-    maplist(label, Rs),
-    tiebreaking_sort([1,2,3,4,5,6], Rs, Ps, Ms).
+    element(Index, S, Id).
