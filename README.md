@@ -46,3 +46,83 @@ For a sketch illustration of the first and second tiebreak rule:
 
 ![img](README.assets/tiebreak.png)
 
+## Need to Know in Prolog
+
+### Good references
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-nlI33r-P70" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- https://github.com/dtonhofer/prolog_notes
+
+### The argument mode indicator
+
+`++`: At call time, the argument must be a ground term, must not contain any variables that are still unbound
+
+`+`: The argument must be instantiated to a term satisfying some type specification, need not necessarily be ground, `[_]` is a list, non ground.
+
+`-`: output argument, may or may not be bound/prvoided, if it's bound at call time, it will act as unbounded and will be unified after the goal succeeds.
+
+`--`: Must be unbound, for example used in `open/3`  to read files.
+
+For more complete indicator, visit the docs of swi-prolog
+
+### `setof(+Template, +Goal, -Set)`
+
+Will binds **Set** to the list of all instances of **Template** satisfying **Goal**, appears in sorted order and unique, only once.
+
+### Memoization 
+
+Memoization is used to store values that has been computed before, we call this a dynamic programming paradigm. In prolog, if we have previously computed a goal, it's very likely for us to encounter the same predicate again in the prolog tree, with memoization, those computation can be shorthanded using memoization.
+
+https://www.metalevel.at/prolog/memoization
+
+## The CLPZ or CLP(FD) for Integer Arithmetic Library
+
+The `#=` syntax can take place of both `is` and `=:=`. But it is more powerful.
+
+Rule of thumb: If you just need arithmetic comparison, use `=:=`. If you want to capture the result of an evaluation, use `is`.
+
+It can do like some crazy stuffs in imperative programming, like:
+```
+?- 4 #= Y+X+3.
+Y+X#=1.
+```
+
+In prolog, there is a predicate called `between/3` which assign the value into a lower and upper bound, while in clpfd, the object is like a range which yields result, more like a generator packed. It is denoted with the operator `in`.
+
+For example:
+
+```
+X in 1..10, label([X]).
+```
+
+will generate the same thing with `between(1, 10, X)`. But if no label predicate specified, it won't show everything.
+
+We can compare this with:
+
+```
+?- between(1, 10, X), Y is X + 5, Y > 10.
+?- X in 1..10, Y #= X+5, Y #> 10
+```
+
+which will yield a better result.
+
+```
+X in 6..10,
+X+5#=Y,
+Y in 11..15.
+```
+
+Adding the `label([X, Y])` would yield the same result as the between one.
+
+Now, we also have an `ins` operator, which is a domain specifying operator, and different with the `in` that is an iterator like object.
+
+For a better overview, please do read https://github.com/Anniepoo/swiplclpfd/blob/master/clpfd.adoc as a reference.
+
+### The maplist
+
+
+
+### Extra Future Reference
+
+https://github.com/Anniepoo/swiplwebtut/blob/master/web.adoc
