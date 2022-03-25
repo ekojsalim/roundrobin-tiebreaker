@@ -113,3 +113,37 @@ if_suprfls([],_).
 if_suprfls(V,[]):-fail,V\==[].
 if_suprfls([V1|V2],T):-set_member(V1,T),!,
                         if_suprfls(V2,T).
+
+
+set_member([],_).
+set_member(V,[]):-fail.
+set member(V,[T1|T2]):-T1=[X|K],
+( subset_set(V,K); set member(V,T2) ).
+
+
+subset_set([],_). 
+subset_set(X,[]):-fail.
+subset_set(X,[K|L]):- subset(X,K);subset_set(X,L).
+
+union([],X,X):-!.
+union([X|R],Y,Z):-member(X,Y),!,union(R,Y,Z).
+union([X|R],Y,[X|Z]):-union(R,Y,Z).
+
+complement(A,[],A):-!.
+complement([],_,[]):-!.
+complement([X|A],B,C):-member(X,B),!,complement(A,B,C),!.
+complement([X|A],B,[X|C]):-complement(A,B,C).
+
+subset(A,A). 
+subset([],A).
+subset(B,A):-B=[B1|B2],member(B1,A),subset(B2,A).
+
+if_incld(A,[B|C]):-subset(B,A);if_incld(A,C).
+append([],X,X):-!.
+append([A|B],C,[A|D]):-append(B,C,D).
+
+member(X,[X|_]):-!.
+member(X,[_|Y]):-member(X,Y).
+
+not(P):-call(P),!,fail.
+not(P).
