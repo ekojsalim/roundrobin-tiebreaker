@@ -4,7 +4,7 @@
 
 %  Begin by reading the input E and invoke the computation.
 qa :- nl, read(E), nl, set(E, [], Z), !,
-prm_implicants(Z, P), nl, !, minimal_sum(P), nl.
+    prm_implicants(Z, P), nl, !, minimal_sum(P), nl.
 
 % Convert input to prolog set form
 
