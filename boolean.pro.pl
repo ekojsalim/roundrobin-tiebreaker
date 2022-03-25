@@ -16,14 +16,14 @@ set([X|R], Ns, Z) :- name(C, [X]),!, set(R, [C|Ns], Z).
 
 % Get prime implicant.
 
-prim_implicants(E, S) :- prm([], E, E, S).
+prm_implicants(E, S) :- prm([], E, E, S).
 prm(_,A,[],A) :- nl, write('prime_implicants ='),
 format(',', A), nl, !.
 prm(Ns, E,[A|R], S) :- consorb(A,E,R,Q),!, append(Ns, [A], Ns1),
                         complement(Q, Ns1, Rr), prm(Ns1, Q, Rr, S).
 
 consorb(_,A,[],A) :-!.
-consorb(P, E, [S|R], Q) :- (consensus(P, S, C), !,
+consorb(P, E, [S|R], Q) :- ((consensus(P, S, C), !,
                             union(E,[C], F), absorb(F,F,D))
                         ; D=E ), consorb(P,D,R,Q).
 
@@ -36,7 +36,7 @@ cons([], _, _) :- fail.
 cons([A|Y], B, [Y|Q]) :- n(Y, Z), member(Z,X), !, Q=[Z].
 cons([Y|A], B, Q) :- cons(A,B,Q).
 
-absorb([A, [], A) :- !.
+absorb(A, [], A) :- !.
 absorb(E, [H|R], F) :- del(H,E,K), !, absorb(K,R,F).
 
 del(Q,E,E1) :- (del_if(Q,E),!,complement(E,[Q], E1)) ; E1=E.
@@ -62,9 +62,9 @@ minimal_sum(E):-e_var(E,Lv),
 
 set_of_complt_forms([],_,[]):-!.
 set_of_complt_forms([E|F],Lv,U):-
-            complt form(E,Lv,V),!,
+            complt_form(E,Lv,V),!,
             append([V],W,U),
-            set_of_complt forms(F,Lv,W).
+            set_of_complt_forms(F,Lv,W).
 
 e_var([],[]):-!.
 e_var([E|F],Lv):-p_var(E,U),!,e_var(F,V),
@@ -105,8 +105,8 @@ simplify(E,U,[R|Q],S):- simplify(E,U,Q,S),!.
 
 check_if(E,E,[],[]):-nl, 
     write('minimal sum = prime sum'),!,fail.
-check if(E,S,U,U):-member(S,U);if_incld(S,U).
-check if(E,S,U,[S|U]):-nl,((U=[],write('min, sum = '));
+check_if(E,S,U,U):-member(S,U);if_incld(S,U).
+check_if(E,S,U,[S|U]):-nl,((U=[],write('min, sum = '));
 (tab(8),write(' = ')) ),format('+',S),nl,!.
 
 if_suprfls([],_).
@@ -117,8 +117,8 @@ if_suprfls([V1|V2],T):-set_member(V1,T),!,
 
 set_member([],_).
 set_member(V,[]):-fail.
-set member(V,[T1|T2]):-T1=[X|K],
-( subset_set(V,K); set member(V,T2) ).
+set_member(V,[T1|T2]):-T1=[X|K],
+( subset_set(V,K); set_member(V,T2) ).
 
 
 subset_set([],_). 
