@@ -3,7 +3,7 @@
  for further detail. */ 
 
 %  Begin by reading the input E and invoke the computation.
-qa :- nl, read(E), nl, set(E, [], Z), !,
+qa :- nl, read(E), nl, atom_chars(E, Cs), set(Cs, [], Z), !,
     prm_implicants(Z, P), nl, !, minimal_sum(P), nl.
 
 % Convert input to prolog set form
@@ -55,6 +55,7 @@ process([n(P)|Q2]):-write(P),write( '''' ),!,process(Q2).
 process([Q1|Q2]):-write(Q1),!,process(Q2). 
 
 % End of formatting
+% Begin computation of minimal sums
 
 minimal_sum(E):-e_var(E,Lv),
     set_of_complt_forms(E,Lv,U),!,
@@ -93,7 +94,7 @@ adjoin(E,L1,Ue):-append(E,[L1],S1),
 prog(_,[],_,_):-!.
 prog(E,R,U,Uprm):-simplify(E,U,R,S),!,
             check_if(E,S,Uprm,Uprm1),!,
-            R=[R1|R2].prog(E,R2,U,Uprm1).
+            R=[R1|R2],prog(E,R2,U,Uprm1).
 
 simplify(A,_,[],A).
 simplify(E,U,[R|Q],S):- R=[G|H],
@@ -107,7 +108,7 @@ check_if(E,E,[],[]):-nl,
     write('minimal sum = prime sum'),!,fail.
 check_if(E,S,U,U):-member(S,U);if_incld(S,U).
 check_if(E,S,U,[S|U]):-nl,((U=[],write('min, sum = '));
-(tab(8),write(' = ')) ),format('+',S),nl,!.
+                (tab(8),write(' = ')) ),format('+',S),nl,!.
 
 if_suprfls([],_).
 if_suprfls(V,[]):-fail,V\==[].
@@ -125,6 +126,8 @@ subset_set([],_).
 subset_set(X,[]):-fail.
 subset_set(X,[K|L]):- subset(X,K);subset_set(X,L).
 
+% Minimal sums computation ends here
+
 union([],X,X):-!.
 union([X|R],Y,Z):-member(X,Y),!,union(R,Y,Z).
 union([X|R],Y,[X|Z]):-union(R,Y,Z).
@@ -139,6 +142,7 @@ subset([],A).
 subset(B,A):-B=[B1|B2],member(B1,A),subset(B2,A).
 
 if_incld(A,[B|C]):-subset(B,A);if_incld(A,C).
+
 append([],X,X):-!.
 append([A|B],C,[A|D]):-append(B,C,D).
 
