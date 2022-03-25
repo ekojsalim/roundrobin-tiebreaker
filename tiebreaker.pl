@@ -1,15 +1,34 @@
-:- use_module(library(lambda)).
-:- use_module(library(lists)).
-:- use_module(library(clpz)).
-:- use_module(library(reif)).
+% :- use_module(library(lambda)).
+% :- use_module(library(lists)).
+% :- use_module(library(clpz)).
+% :- use_module(library(reif)).
+% :- use_module(library(pairs)).
+% :- use_module(library(ordsets)).
+% :- use_module(library(si)).
+% :- use_module(library(format)).
+% :- use_module(library(debug)).
+% :- use_module(library(time)).
+
+:- use_module(library(clpfd)).
+:- use_module(reif).
 :- use_module(library(pairs)).
 :- use_module(library(ordsets)).
-:- use_module(library(si)).
-:- use_module(library(format)).
-:- use_module(library(debug)).
-:- use_module(library(time)).
 
-:- meta_predicate specific_value(3, ?, ?, ?).
+integer_si(I) :-
+    functor(I, _, 0),
+    integer(I).
+
+zo_t(0, false).
+zo_t(1, true).
+
+#=(X, Y, T) :-
+    X #= Y #<==> B,
+    zo_t(B, T).
+
+#<(X, Y, T) :-
+    X #< Y #<==> B,
+    zo_t(B, T).
+
 :- dynamic(memo_/1).
 
 memo(Goal) :-
@@ -19,57 +38,18 @@ memo(Goal) :-
     ).
 
 % Data
-team(1, ence).
-team(2, faze).
-team(3, furia).
-team(4, outsiders).
-team(5, sprout).
-team(6, vitality).
-
 teams(L) :- findall(X, team(_, X), L).
-
-results([[1, 2, 1, 2, 1],
-    [1, 3, _, _, _],
-    [1, 4, 1, 2, 0],
-    [1, 5, _, _, _],
-    [1, 6, 1, 2, 0],
-    [2, 3, _, _, _],
-    [2, 4, 4, 2, 0],
-    [2, 5, 2, 2, 0],
-    [2, 6, _, _, _],
-    [3, 4, 3, 2, 1],
-    [3, 5, 3, 2, 0],
-    [3, 6, 3, 2, 1],
-    [4, 5, _, _, _],
-    [4, 6, _, _, _],
-    [5, 6, 6, 2, 0]]).
-
-% results([[1, 2, 1, 2, 1],
-%     [1, 3, 3, 2, 1],
-%     [1, 4, 1, 2, 0],
-%     [1, 5, 1, 2, 1],
-%     [1, 6, 1, 2, 0],
-%     [2, 3, 2, 2, 1],
-%     [2, 4, 4, 2, 0],
-%     [2, 5, 2, 2, 0],
-%     [2, 6, 2, 2, 0],
-%     [3, 4, 3, 2, 1],
-%     [3, 5, 3, 2, 0],
-%     [3, 6, 3, 2, 1],
-%     [4, 5, 4, 2, 1],
-%     [4, 6, 6, 2, 0],
-%     [5, 6, 6, 2, 0]]).
 
 result(R) :- results(Rs), member(R, Rs).
 instantiated_result(Rs) :- setof(R, (result(R), ground(R)), Rs).
 
 valid_result(R) :-
     R = [T1, T2, W, S1, S2 | _],
-    R ins 0..47,
     % matchup
     [T1, T2] ins 1..6,
     T1 #< T2,
     % winner
+    W in 1..6,
     (W #= T1 #\/ W #= T2),
     % set score
     S1 #= 2,
@@ -132,7 +112,6 @@ map_win(T, R, V) :-
     
 
 % tibreaking logic
-% tiebreakers([specific_points, specific_map_difference, specific_map_wins, overall_map_difference, overall_map_wins]).
 tiebreakers([specific_value(point), specific_value(map_difference), specific_value(map_win), overall_value(map_difference), overall_value(map_win)]).
 
 team_sort(VP, Ts, Rs, Gs) :-
@@ -160,15 +139,19 @@ tiebreaking_subgroup_sort(Rs, [P|Ps], G, O) :-
         ).
 
 % helper
-flatten([],[]).
-flatten([Head|Tail],R) :-
-	flatten(Head,New_Head),
-	flatten(Tail,New_Tail),
-	append(New_Head,New_Tail,R).
-flatten([Head|Tail1], [Head|Tail2]) :-
-	Head \= [],
-	Head \= [_|_],
-    flatten(Tail1,Tail2).
+flatten(List, Flat) :-
+    flatten(List, Flat, []).
+
+flatten([], Res, Res) :- !.
+flatten([Head|Tail], Res, Cont) :-
+    !,
+    flatten(Head, Res, Cont1),
+    flatten(Tail, Cont1, Cont).
+flatten(Term, [Term|Cont], Cont).
+
+take(N, _, Xs) :- N =< 0, !, N =:= 0, Xs = [].
+take(_, [], []).
+take(N, [X|Xs], [X|Ys]) :- M is N-1, take(M, Xs, Ys).
 
 
 % high level predicates
@@ -185,3 +168,25 @@ qualify(T, Rs) :-
     team(Id, T),
     Index in 1..3,
     element(Index, S, Id).
+    
+not_qualify(T, Rs) :-
+    standings(S, Rs),
+    team(Id, T),
+    Index in 4..6,
+    element(Index, S, Id).
+
+unknown_results(Rs, URs) :-
+    list_to_ord_set(Rs, ORs),
+    instantiated_result(IRs),
+    ord_subtract(ORs, IRs, URs).
+    
+qualifying_results(T, QRs) :-
+    setof(Rs, (qualify(T, Rs), maplist(label, Rs)), SRs),
+    maplist(unknown_results, SRs, QRs).
+
+not_qualifying_results(T, QRs) :-
+    setof(Rs, (not_qualify(T, Rs), maplist(label, Rs)), SRs),
+    maplist(unknown_results, SRs, QRs).
+
+mq(Team) :- consult('data.pl'), qualifying_results(Team, Os), open("output.txt", write, Out), write(Out, Os), close(Out).
+mnq(Team) :- consult('data.pl'), not_qualifying_results(Team, Os), open("output.txt", write, Out), write(Out, Os), close(Out).
