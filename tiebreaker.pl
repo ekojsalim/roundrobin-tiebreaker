@@ -1,43 +1,13 @@
-% :- use_module(library(lambda)).
-% :- use_module(library(lists)).
-% :- use_module(library(clpz)).
-% :- use_module(library(reif)).
-% :- use_module(library(pairs)).
-% :- use_module(library(ordsets)).
-% :- use_module(library(si)).
-% :- use_module(library(format)).
-% :- use_module(library(debug)).
-% :- use_module(library(time)).
-
 :- use_module(library(clpfd)).
-:- use_module(reif).
 :- use_module(library(pairs)).
 :- use_module(library(ordsets)).
 
-integer_si(I) :-
-    functor(I, _, 0),
-    integer(I).
-
-zo_t(0, false).
-zo_t(1, true).
-
-#=(X, Y, T) :-
-    X #= Y #<==> B,
-    zo_t(B, T).
-
-#<(X, Y, T) :-
-    X #< Y #<==> B,
-    zo_t(B, T).
-
-:- dynamic(memo_/1).
-
-memo(Goal) :-
-    (memo_(Goal) ->
-        true;
-        (once(Goal), assertz(memo_(Goal)))
-    ).
+:- use_module(reif).
+:- use_module(helper).
 
 % Data
+:- [data].
+
 teams(L) :- findall(X, team(_, X), L).
 
 result(R) :- results(Rs), member(R, Rs).
@@ -137,22 +107,6 @@ tiebreaking_subgroup_sort(Rs, [P|Ps], G, O) :-
             maplist(tiebreaking_subgroup_sort(Rs, TPs), SG, O)), % reset the predicates used
         maplist(tiebreaking_subgroup_sort(Rs, Ps), SG, O) % use remaining predicates
         ).
-
-% helper
-flatten(List, Flat) :-
-    flatten(List, Flat, []).
-
-flatten([], Res, Res) :- !.
-flatten([Head|Tail], Res, Cont) :-
-    !,
-    flatten(Head, Res, Cont1),
-    flatten(Tail, Cont1, Cont).
-flatten(Term, [Term|Cont], Cont).
-
-take(N, _, Xs) :- N =< 0, !, N =:= 0, Xs = [].
-take(_, [], []).
-take(N, [X|Xs], [X|Ys]) :- M is N-1, take(M, Xs, Ys).
-
 
 % high level predicates
 standings(S, Rs) :-
