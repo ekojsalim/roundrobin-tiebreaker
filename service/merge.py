@@ -51,7 +51,7 @@ for s in simplification:
             t1, t2 = ts
             winner = td[t1] if win == "1" else td[t2]
             loser  = td[t2] if win == "1" else td[t1]
-            hr = f"{winner} beats {loser}"
+            hr = f"{winner} beat {loser}"
             if score != "-":
                 hr += f" {'in 2 maps' if score == '1' else 'in 3 maps'}"
             human_readable.append(hr)

@@ -1,0 +1,2575 @@
+[
+  {
+    "serie": {
+      "begin_at": "2022-03-09T11:30:00Z",
+      "description": null,
+      "end_at": null,
+      "full_name": "Season 15 2022",
+      "id": 4417,
+      "league_id": 4568,
+      "modified_at": "2022-03-01T15:30:04Z",
+      "name": null,
+      "season": "15",
+      "slug": "cs-go-esl-pro-league-season-15-2022",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": null,
+      "year": 2022
+    },
+    "rescheduled": false,
+    "results": [
+      { "score": 0, "team_id": 126233 },
+      { "score": 0, "team_id": 3285 }
+    ],
+    "tournament": {
+      "begin_at": "2022-03-30T10:30:00Z",
+      "end_at": null,
+      "id": 7600,
+      "league_id": 4568,
+      "live_supported": true,
+      "modified_at": "2022-03-30T07:34:20Z",
+      "name": "Group D",
+      "prizepool": null,
+      "serie_id": 4417,
+      "slug": "cs-go-esl-pro-league-season-15-2022-group-d",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": "Team"
+    },
+    "games": [
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66242,
+        "length": null,
+        "match_id": 623624,
+        "position": 1,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66243,
+        "length": null,
+        "match_id": 623624,
+        "position": 2,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66244,
+        "length": null,
+        "match_id": 623624,
+        "position": 3,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      }
+    ],
+    "live_embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+    "videogame_version": null,
+    "league": {
+      "id": 4568,
+      "image_url": "https://cdn.pandascore.co/images/league/image/4568/esl_pro_league.png",
+      "modified_at": "2021-08-23T07:15:00Z",
+      "name": "ESL Pro League",
+      "slug": "cs-go-esl-pro-league",
+      "url": "https://pro.eslgaming.com/csgo/proleague/"
+    },
+    "forfeit": false,
+    "match_type": "best_of",
+    "live": {
+      "opens_at": "2022-04-03T17:15:00Z",
+      "supported": true,
+      "url": "wss://live.pandascore.co/matches/623624"
+    },
+    "id": 623624,
+    "streams_list": [
+      {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "language": "en",
+        "main": true,
+        "official": true,
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      }
+    ],
+    "streams": {
+      "english": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "official": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "russian": { "embed_url": null, "raw_url": null }
+    },
+    "winner_id": null,
+    "slug": "evil-geniuses-vs-ago-2022-04-03",
+    "draw": false,
+    "status": "not_started",
+    "league_id": 4568,
+    "detailed_stats": true,
+    "original_scheduled_at": "2022-04-03T17:30:00Z",
+    "scheduled_at": "2022-04-03T17:30:00Z",
+    "winner": null,
+    "serie_id": 4417,
+    "opponents": [
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 126233,
+          "image_url": "https://cdn.pandascore.co/images/team/image/126233/10399.png",
+          "location": "US",
+          "modified_at": "2022-03-13T13:09:11Z",
+          "name": "Evil Geniuses",
+          "slug": "evil-geniuses-csgo"
+        },
+        "type": "Team"
+      },
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3285,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3285/AGO_ESPORT.png",
+          "location": "PL",
+          "modified_at": "2022-03-27T18:16:07Z",
+          "name": "AGO",
+          "slug": "ago"
+        },
+        "type": "Team"
+      }
+    ],
+    "begin_at": "2022-04-03T17:30:00Z",
+    "modified_at": "2022-02-22T08:36:48Z",
+    "name": "Evil Geniuses vs AGO",
+    "end_at": null,
+    "number_of_games": 3,
+    "official_stream_url": "https://www.twitch.tv/esl_csgo",
+    "game_advantage": null,
+    "videogame": { "id": 3, "name": "CS:GO", "slug": "cs-go" },
+    "tournament_id": 7600
+  },
+  {
+    "serie": {
+      "begin_at": "2022-03-09T11:30:00Z",
+      "description": null,
+      "end_at": null,
+      "full_name": "Season 15 2022",
+      "id": 4417,
+      "league_id": 4568,
+      "modified_at": "2022-03-01T15:30:04Z",
+      "name": null,
+      "season": "15",
+      "slug": "cs-go-esl-pro-league-season-15-2022",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": null,
+      "year": 2022
+    },
+    "rescheduled": false,
+    "results": [
+      { "score": 0, "team_id": 3209 },
+      { "score": 0, "team_id": 3310 }
+    ],
+    "tournament": {
+      "begin_at": "2022-03-30T10:30:00Z",
+      "end_at": null,
+      "id": 7600,
+      "league_id": 4568,
+      "live_supported": true,
+      "modified_at": "2022-03-30T07:34:20Z",
+      "name": "Group D",
+      "prizepool": null,
+      "serie_id": 4417,
+      "slug": "cs-go-esl-pro-league-season-15-2022-group-d",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": "Team"
+    },
+    "games": [
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66239,
+        "length": null,
+        "match_id": 623623,
+        "position": 1,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66240,
+        "length": null,
+        "match_id": 623623,
+        "position": 2,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66241,
+        "length": null,
+        "match_id": 623623,
+        "position": 3,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      }
+    ],
+    "live_embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+    "videogame_version": null,
+    "league": {
+      "id": 4568,
+      "image_url": "https://cdn.pandascore.co/images/league/image/4568/esl_pro_league.png",
+      "modified_at": "2021-08-23T07:15:00Z",
+      "name": "ESL Pro League",
+      "slug": "cs-go-esl-pro-league",
+      "url": "https://pro.eslgaming.com/csgo/proleague/"
+    },
+    "forfeit": false,
+    "match_type": "best_of",
+    "live": {
+      "opens_at": "2022-04-03T17:15:00Z",
+      "supported": true,
+      "url": "wss://live.pandascore.co/matches/623623"
+    },
+    "id": 623623,
+    "streams_list": [
+      {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "language": "en",
+        "main": true,
+        "official": true,
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      }
+    ],
+    "streams": {
+      "english": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "official": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "russian": { "embed_url": null, "raw_url": null }
+    },
+    "winner_id": null,
+    "slug": "astralis-vs-complexity-2022-04-03",
+    "draw": false,
+    "status": "not_started",
+    "league_id": 4568,
+    "detailed_stats": true,
+    "original_scheduled_at": "2022-04-03T17:30:00Z",
+    "scheduled_at": "2022-04-03T17:30:00Z",
+    "winner": null,
+    "serie_id": 4417,
+    "opponents": [
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3209,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3209/ASTRALIS.png",
+          "location": "DK",
+          "modified_at": "2022-03-01T18:17:07Z",
+          "name": "Astralis",
+          "slug": "astralis"
+        },
+        "type": "Team"
+      },
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3310,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3310/600px_complexity_gaming_2019.png",
+          "location": "US",
+          "modified_at": "2022-03-11T07:07:28Z",
+          "name": "Complexity",
+          "slug": "complexity"
+        },
+        "type": "Team"
+      }
+    ],
+    "begin_at": "2022-04-03T17:30:00Z",
+    "modified_at": "2022-02-22T08:36:32Z",
+    "name": "Astralis vs Complexity",
+    "end_at": null,
+    "number_of_games": 3,
+    "official_stream_url": "https://www.twitch.tv/esl_csgo",
+    "game_advantage": null,
+    "videogame": { "id": 3, "name": "CS:GO", "slug": "cs-go" },
+    "tournament_id": 7600
+  },
+  {
+    "serie": {
+      "begin_at": "2022-03-09T11:30:00Z",
+      "description": null,
+      "end_at": null,
+      "full_name": "Season 15 2022",
+      "id": 4417,
+      "league_id": 4568,
+      "modified_at": "2022-03-01T15:30:04Z",
+      "name": null,
+      "season": "15",
+      "slug": "cs-go-esl-pro-league-season-15-2022",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": null,
+      "year": 2022
+    },
+    "rescheduled": false,
+    "results": [
+      { "score": 0, "team_id": 3246 },
+      { "score": 0, "team_id": 3216 }
+    ],
+    "tournament": {
+      "begin_at": "2022-03-30T10:30:00Z",
+      "end_at": null,
+      "id": 7600,
+      "league_id": 4568,
+      "live_supported": true,
+      "modified_at": "2022-03-30T07:34:20Z",
+      "name": "Group D",
+      "prizepool": null,
+      "serie_id": 4417,
+      "slug": "cs-go-esl-pro-league-season-15-2022-group-d",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": "Team"
+    },
+    "games": [
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66236,
+        "length": null,
+        "match_id": 623622,
+        "position": 1,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66237,
+        "length": null,
+        "match_id": 623622,
+        "position": 2,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66238,
+        "length": null,
+        "match_id": 623622,
+        "position": 3,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      }
+    ],
+    "live_embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+    "videogame_version": null,
+    "league": {
+      "id": 4568,
+      "image_url": "https://cdn.pandascore.co/images/league/image/4568/esl_pro_league.png",
+      "modified_at": "2021-08-23T07:15:00Z",
+      "name": "ESL Pro League",
+      "slug": "cs-go-esl-pro-league",
+      "url": "https://pro.eslgaming.com/csgo/proleague/"
+    },
+    "forfeit": false,
+    "match_type": "best_of",
+    "live": {
+      "opens_at": "2022-04-03T17:15:00Z",
+      "supported": true,
+      "url": "wss://live.pandascore.co/matches/623622"
+    },
+    "id": 623622,
+    "streams_list": [
+      {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "language": "en",
+        "main": true,
+        "official": true,
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      }
+    ],
+    "streams": {
+      "english": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "official": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "russian": { "embed_url": null, "raw_url": null }
+    },
+    "winner_id": null,
+    "slug": "heroic-vs-natus-vincere-2022-04-03",
+    "draw": false,
+    "status": "not_started",
+    "league_id": 4568,
+    "detailed_stats": true,
+    "original_scheduled_at": "2022-04-03T17:30:00Z",
+    "scheduled_at": "2022-04-03T17:30:00Z",
+    "winner": null,
+    "serie_id": 4417,
+    "opponents": [
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3246,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3246/Heroic_2019_teamcardimage.png",
+          "location": "DK",
+          "modified_at": "2022-03-15T01:10:33Z",
+          "name": "Heroic",
+          "slug": "heroic"
+        },
+        "type": "Team"
+      },
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3216,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3216/NATUS_VINCERE.png",
+          "location": "UA",
+          "modified_at": "2022-03-30T07:34:20Z",
+          "name": "Natus Vincere",
+          "slug": "natus-vincere-cs-go"
+        },
+        "type": "Team"
+      }
+    ],
+    "begin_at": "2022-04-03T17:30:00Z",
+    "modified_at": "2022-02-22T08:36:15Z",
+    "name": "Heroic vs Natus Vincere",
+    "end_at": null,
+    "number_of_games": 3,
+    "official_stream_url": "https://www.twitch.tv/esl_csgo",
+    "game_advantage": null,
+    "videogame": { "id": 3, "name": "CS:GO", "slug": "cs-go" },
+    "tournament_id": 7600
+  },
+  {
+    "serie": {
+      "begin_at": "2022-03-09T11:30:00Z",
+      "description": null,
+      "end_at": null,
+      "full_name": "Season 15 2022",
+      "id": 4417,
+      "league_id": 4568,
+      "modified_at": "2022-03-01T15:30:04Z",
+      "name": null,
+      "season": "15",
+      "slug": "cs-go-esl-pro-league-season-15-2022",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": null,
+      "year": 2022
+    },
+    "rescheduled": false,
+    "results": [
+      { "score": 0, "team_id": 3209 },
+      { "score": 0, "team_id": 3216 }
+    ],
+    "tournament": {
+      "begin_at": "2022-03-30T10:30:00Z",
+      "end_at": null,
+      "id": 7600,
+      "league_id": 4568,
+      "live_supported": true,
+      "modified_at": "2022-03-30T07:34:20Z",
+      "name": "Group D",
+      "prizepool": null,
+      "serie_id": 4417,
+      "slug": "cs-go-esl-pro-league-season-15-2022-group-d",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": "Team"
+    },
+    "games": [
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66233,
+        "length": null,
+        "match_id": 623621,
+        "position": 1,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66234,
+        "length": null,
+        "match_id": 623621,
+        "position": 2,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66235,
+        "length": null,
+        "match_id": 623621,
+        "position": 3,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      }
+    ],
+    "live_embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+    "videogame_version": null,
+    "league": {
+      "id": 4568,
+      "image_url": "https://cdn.pandascore.co/images/league/image/4568/esl_pro_league.png",
+      "modified_at": "2021-08-23T07:15:00Z",
+      "name": "ESL Pro League",
+      "slug": "cs-go-esl-pro-league",
+      "url": "https://pro.eslgaming.com/csgo/proleague/"
+    },
+    "forfeit": false,
+    "match_type": "best_of",
+    "live": {
+      "opens_at": "2022-04-02T17:15:00Z",
+      "supported": true,
+      "url": "wss://live.pandascore.co/matches/623621"
+    },
+    "id": 623621,
+    "streams_list": [
+      {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "language": "en",
+        "main": true,
+        "official": true,
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      }
+    ],
+    "streams": {
+      "english": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "official": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "russian": { "embed_url": null, "raw_url": null }
+    },
+    "winner_id": null,
+    "slug": "astralis-vs-natus-vincere-2022-04-02",
+    "draw": false,
+    "status": "not_started",
+    "league_id": 4568,
+    "detailed_stats": true,
+    "original_scheduled_at": "2022-04-02T17:30:00Z",
+    "scheduled_at": "2022-04-02T17:30:00Z",
+    "winner": null,
+    "serie_id": 4417,
+    "opponents": [
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3209,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3209/ASTRALIS.png",
+          "location": "DK",
+          "modified_at": "2022-03-01T18:17:07Z",
+          "name": "Astralis",
+          "slug": "astralis"
+        },
+        "type": "Team"
+      },
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3216,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3216/NATUS_VINCERE.png",
+          "location": "UA",
+          "modified_at": "2022-03-30T07:34:20Z",
+          "name": "Natus Vincere",
+          "slug": "natus-vincere-cs-go"
+        },
+        "type": "Team"
+      }
+    ],
+    "begin_at": "2022-04-02T17:30:00Z",
+    "modified_at": "2022-02-22T08:36:01Z",
+    "name": "Astralis vs Natus Vincere",
+    "end_at": null,
+    "number_of_games": 3,
+    "official_stream_url": "https://www.twitch.tv/esl_csgo",
+    "game_advantage": null,
+    "videogame": { "id": 3, "name": "CS:GO", "slug": "cs-go" },
+    "tournament_id": 7600
+  },
+  {
+    "serie": {
+      "begin_at": "2022-03-09T11:30:00Z",
+      "description": null,
+      "end_at": null,
+      "full_name": "Season 15 2022",
+      "id": 4417,
+      "league_id": 4568,
+      "modified_at": "2022-03-01T15:30:04Z",
+      "name": null,
+      "season": "15",
+      "slug": "cs-go-esl-pro-league-season-15-2022",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": null,
+      "year": 2022
+    },
+    "rescheduled": false,
+    "results": [
+      { "score": 0, "team_id": 3310 },
+      { "score": 0, "team_id": 126233 }
+    ],
+    "tournament": {
+      "begin_at": "2022-03-30T10:30:00Z",
+      "end_at": null,
+      "id": 7600,
+      "league_id": 4568,
+      "live_supported": true,
+      "modified_at": "2022-03-30T07:34:20Z",
+      "name": "Group D",
+      "prizepool": null,
+      "serie_id": 4417,
+      "slug": "cs-go-esl-pro-league-season-15-2022-group-d",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": "Team"
+    },
+    "games": [
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66230,
+        "length": null,
+        "match_id": 623620,
+        "position": 1,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66231,
+        "length": null,
+        "match_id": 623620,
+        "position": 2,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66232,
+        "length": null,
+        "match_id": 623620,
+        "position": 3,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      }
+    ],
+    "live_embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+    "videogame_version": null,
+    "league": {
+      "id": 4568,
+      "image_url": "https://cdn.pandascore.co/images/league/image/4568/esl_pro_league.png",
+      "modified_at": "2021-08-23T07:15:00Z",
+      "name": "ESL Pro League",
+      "slug": "cs-go-esl-pro-league",
+      "url": "https://pro.eslgaming.com/csgo/proleague/"
+    },
+    "forfeit": false,
+    "match_type": "best_of",
+    "live": {
+      "opens_at": "2022-04-02T13:45:00Z",
+      "supported": true,
+      "url": "wss://live.pandascore.co/matches/623620"
+    },
+    "id": 623620,
+    "streams_list": [
+      {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "language": "en",
+        "main": true,
+        "official": true,
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      }
+    ],
+    "streams": {
+      "english": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "official": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "russian": { "embed_url": null, "raw_url": null }
+    },
+    "winner_id": null,
+    "slug": "complexity-vs-evil-geniuses-2022-04-02",
+    "draw": false,
+    "status": "not_started",
+    "league_id": 4568,
+    "detailed_stats": true,
+    "original_scheduled_at": "2022-04-02T14:00:00Z",
+    "scheduled_at": "2022-04-02T14:00:00Z",
+    "winner": null,
+    "serie_id": 4417,
+    "opponents": [
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3310,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3310/600px_complexity_gaming_2019.png",
+          "location": "US",
+          "modified_at": "2022-03-11T07:07:28Z",
+          "name": "Complexity",
+          "slug": "complexity"
+        },
+        "type": "Team"
+      },
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 126233,
+          "image_url": "https://cdn.pandascore.co/images/team/image/126233/10399.png",
+          "location": "US",
+          "modified_at": "2022-03-13T13:09:11Z",
+          "name": "Evil Geniuses",
+          "slug": "evil-geniuses-csgo"
+        },
+        "type": "Team"
+      }
+    ],
+    "begin_at": "2022-04-02T14:00:00Z",
+    "modified_at": "2022-02-22T08:35:45Z",
+    "name": "Complexity vs Evil Geniuses",
+    "end_at": null,
+    "number_of_games": 3,
+    "official_stream_url": "https://www.twitch.tv/esl_csgo",
+    "game_advantage": null,
+    "videogame": { "id": 3, "name": "CS:GO", "slug": "cs-go" },
+    "tournament_id": 7600
+  },
+  {
+    "serie": {
+      "begin_at": "2022-03-09T11:30:00Z",
+      "description": null,
+      "end_at": null,
+      "full_name": "Season 15 2022",
+      "id": 4417,
+      "league_id": 4568,
+      "modified_at": "2022-03-01T15:30:04Z",
+      "name": null,
+      "season": "15",
+      "slug": "cs-go-esl-pro-league-season-15-2022",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": null,
+      "year": 2022
+    },
+    "rescheduled": false,
+    "results": [
+      { "score": 0, "team_id": 3246 },
+      { "score": 0, "team_id": 3285 }
+    ],
+    "tournament": {
+      "begin_at": "2022-03-30T10:30:00Z",
+      "end_at": null,
+      "id": 7600,
+      "league_id": 4568,
+      "live_supported": true,
+      "modified_at": "2022-03-30T07:34:20Z",
+      "name": "Group D",
+      "prizepool": null,
+      "serie_id": 4417,
+      "slug": "cs-go-esl-pro-league-season-15-2022-group-d",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": "Team"
+    },
+    "games": [
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66227,
+        "length": null,
+        "match_id": 623619,
+        "position": 1,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66228,
+        "length": null,
+        "match_id": 623619,
+        "position": 2,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66229,
+        "length": null,
+        "match_id": 623619,
+        "position": 3,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      }
+    ],
+    "live_embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+    "videogame_version": null,
+    "league": {
+      "id": 4568,
+      "image_url": "https://cdn.pandascore.co/images/league/image/4568/esl_pro_league.png",
+      "modified_at": "2021-08-23T07:15:00Z",
+      "name": "ESL Pro League",
+      "slug": "cs-go-esl-pro-league",
+      "url": "https://pro.eslgaming.com/csgo/proleague/"
+    },
+    "forfeit": false,
+    "match_type": "best_of",
+    "live": {
+      "opens_at": "2022-04-02T10:15:00Z",
+      "supported": true,
+      "url": "wss://live.pandascore.co/matches/623619"
+    },
+    "id": 623619,
+    "streams_list": [
+      {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "language": "en",
+        "main": true,
+        "official": true,
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      }
+    ],
+    "streams": {
+      "english": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "official": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "russian": { "embed_url": null, "raw_url": null }
+    },
+    "winner_id": null,
+    "slug": "heroic-vs-ago-2022-04-02",
+    "draw": false,
+    "status": "not_started",
+    "league_id": 4568,
+    "detailed_stats": true,
+    "original_scheduled_at": "2022-04-02T10:30:00Z",
+    "scheduled_at": "2022-04-02T10:30:00Z",
+    "winner": null,
+    "serie_id": 4417,
+    "opponents": [
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3246,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3246/Heroic_2019_teamcardimage.png",
+          "location": "DK",
+          "modified_at": "2022-03-15T01:10:33Z",
+          "name": "Heroic",
+          "slug": "heroic"
+        },
+        "type": "Team"
+      },
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3285,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3285/AGO_ESPORT.png",
+          "location": "PL",
+          "modified_at": "2022-03-27T18:16:07Z",
+          "name": "AGO",
+          "slug": "ago"
+        },
+        "type": "Team"
+      }
+    ],
+    "begin_at": "2022-04-02T10:30:00Z",
+    "modified_at": "2022-02-22T08:35:35Z",
+    "name": "Heroic vs AGO",
+    "end_at": null,
+    "number_of_games": 3,
+    "official_stream_url": "https://www.twitch.tv/esl_csgo",
+    "game_advantage": null,
+    "videogame": { "id": 3, "name": "CS:GO", "slug": "cs-go" },
+    "tournament_id": 7600
+  },
+  {
+    "serie": {
+      "begin_at": "2022-03-09T11:30:00Z",
+      "description": null,
+      "end_at": null,
+      "full_name": "Season 15 2022",
+      "id": 4417,
+      "league_id": 4568,
+      "modified_at": "2022-03-01T15:30:04Z",
+      "name": null,
+      "season": "15",
+      "slug": "cs-go-esl-pro-league-season-15-2022",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": null,
+      "year": 2022
+    },
+    "rescheduled": false,
+    "results": [
+      { "score": 0, "team_id": 3216 },
+      { "score": 0, "team_id": 3310 }
+    ],
+    "tournament": {
+      "begin_at": "2022-03-30T10:30:00Z",
+      "end_at": null,
+      "id": 7600,
+      "league_id": 4568,
+      "live_supported": true,
+      "modified_at": "2022-03-30T07:34:20Z",
+      "name": "Group D",
+      "prizepool": null,
+      "serie_id": 4417,
+      "slug": "cs-go-esl-pro-league-season-15-2022-group-d",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": "Team"
+    },
+    "games": [
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66224,
+        "length": null,
+        "match_id": 623618,
+        "position": 1,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66225,
+        "length": null,
+        "match_id": 623618,
+        "position": 2,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66226,
+        "length": null,
+        "match_id": 623618,
+        "position": 3,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      }
+    ],
+    "live_embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+    "videogame_version": null,
+    "league": {
+      "id": 4568,
+      "image_url": "https://cdn.pandascore.co/images/league/image/4568/esl_pro_league.png",
+      "modified_at": "2021-08-23T07:15:00Z",
+      "name": "ESL Pro League",
+      "slug": "cs-go-esl-pro-league",
+      "url": "https://pro.eslgaming.com/csgo/proleague/"
+    },
+    "forfeit": false,
+    "match_type": "best_of",
+    "live": {
+      "opens_at": "2022-04-01T17:15:00Z",
+      "supported": true,
+      "url": "wss://live.pandascore.co/matches/623618"
+    },
+    "id": 623618,
+    "streams_list": [
+      {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "language": "en",
+        "main": true,
+        "official": true,
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      }
+    ],
+    "streams": {
+      "english": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "official": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "russian": { "embed_url": null, "raw_url": null }
+    },
+    "winner_id": null,
+    "slug": "natus-vincere-vs-complexity-2022-04-01",
+    "draw": false,
+    "status": "not_started",
+    "league_id": 4568,
+    "detailed_stats": true,
+    "original_scheduled_at": "2022-04-01T17:30:00Z",
+    "scheduled_at": "2022-04-01T17:30:00Z",
+    "winner": null,
+    "serie_id": 4417,
+    "opponents": [
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3216,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3216/NATUS_VINCERE.png",
+          "location": "UA",
+          "modified_at": "2022-03-30T07:34:20Z",
+          "name": "Natus Vincere",
+          "slug": "natus-vincere-cs-go"
+        },
+        "type": "Team"
+      },
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3310,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3310/600px_complexity_gaming_2019.png",
+          "location": "US",
+          "modified_at": "2022-03-11T07:07:28Z",
+          "name": "Complexity",
+          "slug": "complexity"
+        },
+        "type": "Team"
+      }
+    ],
+    "begin_at": "2022-04-01T17:30:00Z",
+    "modified_at": "2022-03-31T21:41:19Z",
+    "name": "Natus Vincere vs Complexity",
+    "end_at": null,
+    "number_of_games": 3,
+    "official_stream_url": "https://www.twitch.tv/esl_csgo",
+    "game_advantage": null,
+    "videogame": { "id": 3, "name": "CS:GO", "slug": "cs-go" },
+    "tournament_id": 7600
+  },
+  {
+    "serie": {
+      "begin_at": "2022-03-09T11:30:00Z",
+      "description": null,
+      "end_at": null,
+      "full_name": "Season 15 2022",
+      "id": 4417,
+      "league_id": 4568,
+      "modified_at": "2022-03-01T15:30:04Z",
+      "name": null,
+      "season": "15",
+      "slug": "cs-go-esl-pro-league-season-15-2022",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": null,
+      "year": 2022
+    },
+    "rescheduled": false,
+    "results": [
+      { "score": 0, "team_id": 3246 },
+      { "score": 0, "team_id": 126233 }
+    ],
+    "tournament": {
+      "begin_at": "2022-03-30T10:30:00Z",
+      "end_at": null,
+      "id": 7600,
+      "league_id": 4568,
+      "live_supported": true,
+      "modified_at": "2022-03-30T07:34:20Z",
+      "name": "Group D",
+      "prizepool": null,
+      "serie_id": 4417,
+      "slug": "cs-go-esl-pro-league-season-15-2022-group-d",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": "Team"
+    },
+    "games": [
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66221,
+        "length": null,
+        "match_id": 623617,
+        "position": 1,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66222,
+        "length": null,
+        "match_id": 623617,
+        "position": 2,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66223,
+        "length": null,
+        "match_id": 623617,
+        "position": 3,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      }
+    ],
+    "live_embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+    "videogame_version": null,
+    "league": {
+      "id": 4568,
+      "image_url": "https://cdn.pandascore.co/images/league/image/4568/esl_pro_league.png",
+      "modified_at": "2021-08-23T07:15:00Z",
+      "name": "ESL Pro League",
+      "slug": "cs-go-esl-pro-league",
+      "url": "https://pro.eslgaming.com/csgo/proleague/"
+    },
+    "forfeit": false,
+    "match_type": "best_of",
+    "live": {
+      "opens_at": "2022-04-01T13:45:00Z",
+      "supported": true,
+      "url": "wss://live.pandascore.co/matches/623617"
+    },
+    "id": 623617,
+    "streams_list": [
+      {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "language": "en",
+        "main": true,
+        "official": true,
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      }
+    ],
+    "streams": {
+      "english": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "official": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "russian": { "embed_url": null, "raw_url": null }
+    },
+    "winner_id": null,
+    "slug": "heroic-vs-evil-geniuses-2022-04-01",
+    "draw": false,
+    "status": "not_started",
+    "league_id": 4568,
+    "detailed_stats": true,
+    "original_scheduled_at": "2022-04-01T14:00:00Z",
+    "scheduled_at": "2022-04-01T14:00:00Z",
+    "winner": null,
+    "serie_id": 4417,
+    "opponents": [
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3246,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3246/Heroic_2019_teamcardimage.png",
+          "location": "DK",
+          "modified_at": "2022-03-15T01:10:33Z",
+          "name": "Heroic",
+          "slug": "heroic"
+        },
+        "type": "Team"
+      },
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 126233,
+          "image_url": "https://cdn.pandascore.co/images/team/image/126233/10399.png",
+          "location": "US",
+          "modified_at": "2022-03-13T13:09:11Z",
+          "name": "Evil Geniuses",
+          "slug": "evil-geniuses-csgo"
+        },
+        "type": "Team"
+      }
+    ],
+    "begin_at": "2022-04-01T14:00:00Z",
+    "modified_at": "2022-03-31T21:40:03Z",
+    "name": "Heroic vs Evil Geniuses",
+    "end_at": null,
+    "number_of_games": 3,
+    "official_stream_url": "https://www.twitch.tv/esl_csgo",
+    "game_advantage": null,
+    "videogame": { "id": 3, "name": "CS:GO", "slug": "cs-go" },
+    "tournament_id": 7600
+  },
+  {
+    "serie": {
+      "begin_at": "2022-03-09T11:30:00Z",
+      "description": null,
+      "end_at": null,
+      "full_name": "Season 15 2022",
+      "id": 4417,
+      "league_id": 4568,
+      "modified_at": "2022-03-01T15:30:04Z",
+      "name": null,
+      "season": "15",
+      "slug": "cs-go-esl-pro-league-season-15-2022",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": null,
+      "year": 2022
+    },
+    "rescheduled": false,
+    "results": [
+      { "score": 0, "team_id": 3209 },
+      { "score": 0, "team_id": 3285 }
+    ],
+    "tournament": {
+      "begin_at": "2022-03-30T10:30:00Z",
+      "end_at": null,
+      "id": 7600,
+      "league_id": 4568,
+      "live_supported": true,
+      "modified_at": "2022-03-30T07:34:20Z",
+      "name": "Group D",
+      "prizepool": null,
+      "serie_id": 4417,
+      "slug": "cs-go-esl-pro-league-season-15-2022-group-d",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": "Team"
+    },
+    "games": [
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66218,
+        "length": null,
+        "match_id": 623616,
+        "position": 1,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66219,
+        "length": null,
+        "match_id": 623616,
+        "position": 2,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": null,
+        "complete": false,
+        "detailed_stats": true,
+        "end_at": null,
+        "finished": false,
+        "forfeit": false,
+        "id": 66220,
+        "length": null,
+        "match_id": 623616,
+        "position": 3,
+        "status": "not_started",
+        "video_url": null,
+        "winner": { "id": null, "type": "Team" },
+        "winner_type": "Team"
+      }
+    ],
+    "live_embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+    "videogame_version": null,
+    "league": {
+      "id": 4568,
+      "image_url": "https://cdn.pandascore.co/images/league/image/4568/esl_pro_league.png",
+      "modified_at": "2021-08-23T07:15:00Z",
+      "name": "ESL Pro League",
+      "slug": "cs-go-esl-pro-league",
+      "url": "https://pro.eslgaming.com/csgo/proleague/"
+    },
+    "forfeit": false,
+    "match_type": "best_of",
+    "live": {
+      "opens_at": "2022-04-01T10:15:00Z",
+      "supported": true,
+      "url": "wss://live.pandascore.co/matches/623616"
+    },
+    "id": 623616,
+    "streams_list": [
+      {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "language": "en",
+        "main": true,
+        "official": true,
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      }
+    ],
+    "streams": {
+      "english": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "official": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "russian": { "embed_url": null, "raw_url": null }
+    },
+    "winner_id": null,
+    "slug": "astralis-vs-ago-2022-04-01",
+    "draw": false,
+    "status": "not_started",
+    "league_id": 4568,
+    "detailed_stats": true,
+    "original_scheduled_at": "2022-04-01T10:30:00Z",
+    "scheduled_at": "2022-04-01T10:30:00Z",
+    "winner": null,
+    "serie_id": 4417,
+    "opponents": [
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3209,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3209/ASTRALIS.png",
+          "location": "DK",
+          "modified_at": "2022-03-01T18:17:07Z",
+          "name": "Astralis",
+          "slug": "astralis"
+        },
+        "type": "Team"
+      },
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3285,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3285/AGO_ESPORT.png",
+          "location": "PL",
+          "modified_at": "2022-03-27T18:16:07Z",
+          "name": "AGO",
+          "slug": "ago"
+        },
+        "type": "Team"
+      }
+    ],
+    "begin_at": "2022-04-01T10:30:00Z",
+    "modified_at": "2022-03-31T21:38:55Z",
+    "name": "Astralis vs AGO",
+    "end_at": null,
+    "number_of_games": 3,
+    "official_stream_url": "https://www.twitch.tv/esl_csgo",
+    "game_advantage": null,
+    "videogame": { "id": 3, "name": "CS:GO", "slug": "cs-go" },
+    "tournament_id": 7600
+  },
+  {
+    "serie": {
+      "begin_at": "2022-03-09T11:30:00Z",
+      "description": null,
+      "end_at": null,
+      "full_name": "Season 15 2022",
+      "id": 4417,
+      "league_id": 4568,
+      "modified_at": "2022-03-01T15:30:04Z",
+      "name": null,
+      "season": "15",
+      "slug": "cs-go-esl-pro-league-season-15-2022",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": null,
+      "year": 2022
+    },
+    "rescheduled": true,
+    "results": [
+      { "score": 2, "team_id": 3216 },
+      { "score": 0, "team_id": 126233 }
+    ],
+    "tournament": {
+      "begin_at": "2022-03-30T10:30:00Z",
+      "end_at": null,
+      "id": 7600,
+      "league_id": 4568,
+      "live_supported": true,
+      "modified_at": "2022-03-30T07:34:20Z",
+      "name": "Group D",
+      "prizepool": null,
+      "serie_id": 4417,
+      "slug": "cs-go-esl-pro-league-season-15-2022-group-d",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": "Team"
+    },
+    "games": [
+      {
+        "begin_at": "2022-03-31T19:01:41Z",
+        "complete": true,
+        "detailed_stats": true,
+        "end_at": "2022-03-31T19:41:14Z",
+        "finished": true,
+        "forfeit": false,
+        "id": 66215,
+        "length": 2373,
+        "match_id": 623615,
+        "position": 1,
+        "status": "finished",
+        "video_url": null,
+        "winner": { "id": 3216, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": "2022-03-31T19:57:51Z",
+        "complete": true,
+        "detailed_stats": true,
+        "end_at": "2022-03-31T20:55:30Z",
+        "finished": true,
+        "forfeit": false,
+        "id": 66216,
+        "length": 3459,
+        "match_id": 623615,
+        "position": 2,
+        "status": "finished",
+        "video_url": "https://player.twitch.tv/?video=v1442007444&autoplay=true&t=9h21m50s&parent=www.hltv.org",
+        "winner": { "id": 3216, "type": "Team" },
+        "winner_type": "Team"
+      }
+    ],
+    "live_embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+    "videogame_version": null,
+    "league": {
+      "id": 4568,
+      "image_url": "https://cdn.pandascore.co/images/league/image/4568/esl_pro_league.png",
+      "modified_at": "2021-08-23T07:15:00Z",
+      "name": "ESL Pro League",
+      "slug": "cs-go-esl-pro-league",
+      "url": "https://pro.eslgaming.com/csgo/proleague/"
+    },
+    "forfeit": false,
+    "match_type": "best_of",
+    "live": {
+      "opens_at": "2022-03-31T18:46:40Z",
+      "supported": true,
+      "url": "wss://live.pandascore.co/matches/623615"
+    },
+    "id": 623615,
+    "streams_list": [
+      {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "language": "en",
+        "main": true,
+        "official": true,
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      }
+    ],
+    "streams": {
+      "english": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "official": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "russian": { "embed_url": null, "raw_url": null }
+    },
+    "winner_id": 3216,
+    "slug": "natus-vincere-vs-evil-geniuses-2022-03-31",
+    "draw": false,
+    "status": "finished",
+    "league_id": 4568,
+    "detailed_stats": true,
+    "original_scheduled_at": "2022-03-31T17:30:00Z",
+    "scheduled_at": "2022-03-31T18:45:00Z",
+    "winner": {
+      "acronym": null,
+      "id": 3216,
+      "image_url": "https://cdn.pandascore.co/images/team/image/3216/NATUS_VINCERE.png",
+      "location": "UA",
+      "modified_at": "2022-03-30T07:34:20Z",
+      "name": "Natus Vincere",
+      "slug": "natus-vincere-cs-go"
+    },
+    "serie_id": 4417,
+    "opponents": [
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3216,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3216/NATUS_VINCERE.png",
+          "location": "UA",
+          "modified_at": "2022-03-30T07:34:20Z",
+          "name": "Natus Vincere",
+          "slug": "natus-vincere-cs-go"
+        },
+        "type": "Team"
+      },
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 126233,
+          "image_url": "https://cdn.pandascore.co/images/team/image/126233/10399.png",
+          "location": "US",
+          "modified_at": "2022-03-13T13:09:11Z",
+          "name": "Evil Geniuses",
+          "slug": "evil-geniuses-csgo"
+        },
+        "type": "Team"
+      }
+    ],
+    "begin_at": "2022-03-31T19:01:40Z",
+    "modified_at": "2022-03-31T20:58:32Z",
+    "name": "Natus Vincere vs Evil Geniuses",
+    "end_at": "2022-03-31T20:55:30Z",
+    "number_of_games": 3,
+    "official_stream_url": "https://www.twitch.tv/esl_csgo",
+    "game_advantage": null,
+    "videogame": { "id": 3, "name": "CS:GO", "slug": "cs-go" },
+    "tournament_id": 7600
+  },
+  {
+    "serie": {
+      "begin_at": "2022-03-09T11:30:00Z",
+      "description": null,
+      "end_at": null,
+      "full_name": "Season 15 2022",
+      "id": 4417,
+      "league_id": 4568,
+      "modified_at": "2022-03-01T15:30:04Z",
+      "name": null,
+      "season": "15",
+      "slug": "cs-go-esl-pro-league-season-15-2022",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": null,
+      "year": 2022
+    },
+    "rescheduled": false,
+    "results": [
+      { "score": 2, "team_id": 3246 },
+      { "score": 1, "team_id": 3209 }
+    ],
+    "tournament": {
+      "begin_at": "2022-03-30T10:30:00Z",
+      "end_at": null,
+      "id": 7600,
+      "league_id": 4568,
+      "live_supported": true,
+      "modified_at": "2022-03-30T07:34:20Z",
+      "name": "Group D",
+      "prizepool": null,
+      "serie_id": 4417,
+      "slug": "cs-go-esl-pro-league-season-15-2022-group-d",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": "Team"
+    },
+    "games": [
+      {
+        "begin_at": "2022-03-31T14:13:54Z",
+        "complete": true,
+        "detailed_stats": true,
+        "end_at": "2022-03-31T15:15:45Z",
+        "finished": true,
+        "forfeit": false,
+        "id": 66212,
+        "length": 3710,
+        "match_id": 623614,
+        "position": 1,
+        "status": "finished",
+        "video_url": null,
+        "winner": { "id": 3209, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": "2022-03-31T15:32:28Z",
+        "complete": true,
+        "detailed_stats": true,
+        "end_at": "2022-03-31T16:47:55Z",
+        "finished": true,
+        "forfeit": false,
+        "id": 66213,
+        "length": 4526,
+        "match_id": 623614,
+        "position": 2,
+        "status": "finished",
+        "video_url": null,
+        "winner": { "id": 3246, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": "2022-03-31T17:04:05Z",
+        "complete": true,
+        "detailed_stats": true,
+        "end_at": "2022-03-31T18:32:53Z",
+        "finished": true,
+        "forfeit": false,
+        "id": 66214,
+        "length": 5327,
+        "match_id": 623614,
+        "position": 3,
+        "status": "finished",
+        "video_url": "https://player.twitch.tv/?video=v1442007444&autoplay=true&t=5h52m54s&parent=www.hltv.org",
+        "winner": { "id": 3246, "type": "Team" },
+        "winner_type": "Team"
+      }
+    ],
+    "live_embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+    "videogame_version": null,
+    "league": {
+      "id": 4568,
+      "image_url": "https://cdn.pandascore.co/images/league/image/4568/esl_pro_league.png",
+      "modified_at": "2021-08-23T07:15:00Z",
+      "name": "ESL Pro League",
+      "slug": "cs-go-esl-pro-league",
+      "url": "https://pro.eslgaming.com/csgo/proleague/"
+    },
+    "forfeit": false,
+    "match_type": "best_of",
+    "live": {
+      "opens_at": "2022-03-31T13:58:54Z",
+      "supported": true,
+      "url": "wss://live.pandascore.co/matches/623614"
+    },
+    "id": 623614,
+    "streams_list": [
+      {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "language": "en",
+        "main": true,
+        "official": true,
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      }
+    ],
+    "streams": {
+      "english": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "official": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "russian": { "embed_url": null, "raw_url": null }
+    },
+    "winner_id": 3246,
+    "slug": "heroic-vs-astralis-2022-03-31",
+    "draw": false,
+    "status": "finished",
+    "league_id": 4568,
+    "detailed_stats": true,
+    "original_scheduled_at": "2022-03-31T14:00:00Z",
+    "scheduled_at": "2022-03-31T14:00:00Z",
+    "winner": {
+      "acronym": null,
+      "id": 3246,
+      "image_url": "https://cdn.pandascore.co/images/team/image/3246/Heroic_2019_teamcardimage.png",
+      "location": "DK",
+      "modified_at": "2022-03-15T01:10:33Z",
+      "name": "Heroic",
+      "slug": "heroic"
+    },
+    "serie_id": 4417,
+    "opponents": [
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3246,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3246/Heroic_2019_teamcardimage.png",
+          "location": "DK",
+          "modified_at": "2022-03-15T01:10:33Z",
+          "name": "Heroic",
+          "slug": "heroic"
+        },
+        "type": "Team"
+      },
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3209,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3209/ASTRALIS.png",
+          "location": "DK",
+          "modified_at": "2022-03-01T18:17:07Z",
+          "name": "Astralis",
+          "slug": "astralis"
+        },
+        "type": "Team"
+      }
+    ],
+    "begin_at": "2022-03-31T14:13:54Z",
+    "modified_at": "2022-03-31T18:37:34Z",
+    "name": "Heroic vs Astralis",
+    "end_at": "2022-03-31T18:32:52Z",
+    "number_of_games": 3,
+    "official_stream_url": "https://www.twitch.tv/esl_csgo",
+    "game_advantage": null,
+    "videogame": { "id": 3, "name": "CS:GO", "slug": "cs-go" },
+    "tournament_id": 7600
+  },
+  {
+    "serie": {
+      "begin_at": "2022-03-09T11:30:00Z",
+      "description": null,
+      "end_at": null,
+      "full_name": "Season 15 2022",
+      "id": 4417,
+      "league_id": 4568,
+      "modified_at": "2022-03-01T15:30:04Z",
+      "name": null,
+      "season": "15",
+      "slug": "cs-go-esl-pro-league-season-15-2022",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": null,
+      "year": 2022
+    },
+    "rescheduled": false,
+    "results": [
+      { "score": 2, "team_id": 3285 },
+      { "score": 1, "team_id": 3310 }
+    ],
+    "tournament": {
+      "begin_at": "2022-03-30T10:30:00Z",
+      "end_at": null,
+      "id": 7600,
+      "league_id": 4568,
+      "live_supported": true,
+      "modified_at": "2022-03-30T07:34:20Z",
+      "name": "Group D",
+      "prizepool": null,
+      "serie_id": 4417,
+      "slug": "cs-go-esl-pro-league-season-15-2022-group-d",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": "Team"
+    },
+    "games": [
+      {
+        "begin_at": "2022-03-31T10:31:26Z",
+        "complete": true,
+        "detailed_stats": true,
+        "end_at": "2022-03-31T11:22:43Z",
+        "finished": true,
+        "forfeit": false,
+        "id": 66209,
+        "length": 3076,
+        "match_id": 623613,
+        "position": 1,
+        "status": "finished",
+        "video_url": null,
+        "winner": { "id": 3310, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": "2022-03-31T11:39:15Z",
+        "complete": true,
+        "detailed_stats": true,
+        "end_at": "2022-03-31T12:36:57Z",
+        "finished": true,
+        "forfeit": false,
+        "id": 66210,
+        "length": 3462,
+        "match_id": 623613,
+        "position": 2,
+        "status": "finished",
+        "video_url": null,
+        "winner": { "id": 3285, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": "2022-03-31T12:52:28Z",
+        "complete": true,
+        "detailed_stats": true,
+        "end_at": "2022-03-31T13:47:47Z",
+        "finished": true,
+        "forfeit": false,
+        "id": 66211,
+        "length": 3318,
+        "match_id": 623613,
+        "position": 3,
+        "status": "finished",
+        "video_url": "https://player.twitch.tv/?video=v1442007444&autoplay=true&t=1h59m41s&parent=www.hltv.org",
+        "winner": { "id": 3285, "type": "Team" },
+        "winner_type": "Team"
+      }
+    ],
+    "live_embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+    "videogame_version": null,
+    "league": {
+      "id": 4568,
+      "image_url": "https://cdn.pandascore.co/images/league/image/4568/esl_pro_league.png",
+      "modified_at": "2021-08-23T07:15:00Z",
+      "name": "ESL Pro League",
+      "slug": "cs-go-esl-pro-league",
+      "url": "https://pro.eslgaming.com/csgo/proleague/"
+    },
+    "forfeit": false,
+    "match_type": "best_of",
+    "live": {
+      "opens_at": "2022-03-31T10:16:26Z",
+      "supported": true,
+      "url": "wss://live.pandascore.co/matches/623613"
+    },
+    "id": 623613,
+    "streams_list": [
+      {
+        "embed_url": "https://player.twitch.tv/?channel=1pvcs",
+        "language": "fr",
+        "main": false,
+        "official": false,
+        "raw_url": "https://www.twitch.tv/1pvcs"
+      },
+      {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo_pl",
+        "language": "pl",
+        "main": false,
+        "official": false,
+        "raw_url": "https://www.twitch.tv/esl_csgo_pl"
+      },
+      {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "language": "en",
+        "main": true,
+        "official": true,
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      }
+    ],
+    "streams": {
+      "english": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "official": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "russian": { "embed_url": null, "raw_url": null }
+    },
+    "winner_id": 3285,
+    "slug": "ago-vs-complexity-2022-03-31",
+    "draw": false,
+    "status": "finished",
+    "league_id": 4568,
+    "detailed_stats": true,
+    "original_scheduled_at": "2022-03-31T10:30:00Z",
+    "scheduled_at": "2022-03-31T10:30:00Z",
+    "winner": {
+      "acronym": null,
+      "id": 3285,
+      "image_url": "https://cdn.pandascore.co/images/team/image/3285/AGO_ESPORT.png",
+      "location": "PL",
+      "modified_at": "2022-03-27T18:16:07Z",
+      "name": "AGO",
+      "slug": "ago"
+    },
+    "serie_id": 4417,
+    "opponents": [
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3285,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3285/AGO_ESPORT.png",
+          "location": "PL",
+          "modified_at": "2022-03-27T18:16:07Z",
+          "name": "AGO",
+          "slug": "ago"
+        },
+        "type": "Team"
+      },
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3310,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3310/600px_complexity_gaming_2019.png",
+          "location": "US",
+          "modified_at": "2022-03-11T07:07:28Z",
+          "name": "Complexity",
+          "slug": "complexity"
+        },
+        "type": "Team"
+      }
+    ],
+    "begin_at": "2022-03-31T10:31:26Z",
+    "modified_at": "2022-03-31T13:54:22Z",
+    "name": "AGO vs Complexity",
+    "end_at": "2022-03-31T13:47:46Z",
+    "number_of_games": 3,
+    "official_stream_url": "https://www.twitch.tv/esl_csgo",
+    "game_advantage": null,
+    "videogame": { "id": 3, "name": "CS:GO", "slug": "cs-go" },
+    "tournament_id": 7600
+  },
+  {
+    "serie": {
+      "begin_at": "2022-03-09T11:30:00Z",
+      "description": null,
+      "end_at": null,
+      "full_name": "Season 15 2022",
+      "id": 4417,
+      "league_id": 4568,
+      "modified_at": "2022-03-01T15:30:04Z",
+      "name": null,
+      "season": "15",
+      "slug": "cs-go-esl-pro-league-season-15-2022",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": null,
+      "year": 2022
+    },
+    "rescheduled": false,
+    "results": [
+      { "score": 2, "team_id": 3209 },
+      { "score": 0, "team_id": 126233 }
+    ],
+    "tournament": {
+      "begin_at": "2022-03-30T10:30:00Z",
+      "end_at": null,
+      "id": 7600,
+      "league_id": 4568,
+      "live_supported": true,
+      "modified_at": "2022-03-30T07:34:20Z",
+      "name": "Group D",
+      "prizepool": null,
+      "serie_id": 4417,
+      "slug": "cs-go-esl-pro-league-season-15-2022-group-d",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": "Team"
+    },
+    "games": [
+      {
+        "begin_at": "2022-03-30T17:32:36Z",
+        "complete": true,
+        "detailed_stats": true,
+        "end_at": "2022-03-30T18:24:18Z",
+        "finished": true,
+        "forfeit": false,
+        "id": 66206,
+        "length": 3101,
+        "match_id": 623612,
+        "position": 1,
+        "status": "finished",
+        "video_url": null,
+        "winner": { "id": 3209, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": "2022-03-30T18:42:07Z",
+        "complete": true,
+        "detailed_stats": true,
+        "end_at": "2022-03-30T19:35:47Z",
+        "finished": true,
+        "forfeit": false,
+        "id": 66207,
+        "length": 3220,
+        "match_id": 623612,
+        "position": 2,
+        "status": "finished",
+        "video_url": "https://player.twitch.tv/?video=v1441044748&autoplay=true&t=7h57m&parent=www.hltv.org",
+        "winner": { "id": 3209, "type": "Team" },
+        "winner_type": "Team"
+      }
+    ],
+    "live_embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+    "videogame_version": null,
+    "league": {
+      "id": 4568,
+      "image_url": "https://cdn.pandascore.co/images/league/image/4568/esl_pro_league.png",
+      "modified_at": "2021-08-23T07:15:00Z",
+      "name": "ESL Pro League",
+      "slug": "cs-go-esl-pro-league",
+      "url": "https://pro.eslgaming.com/csgo/proleague/"
+    },
+    "forfeit": false,
+    "match_type": "best_of",
+    "live": {
+      "opens_at": "2022-03-30T17:17:36Z",
+      "supported": true,
+      "url": "wss://live.pandascore.co/matches/623612"
+    },
+    "id": 623612,
+    "streams_list": [
+      {
+        "embed_url": "https://player.twitch.tv/?channel=csgo_mc",
+        "language": "ru",
+        "main": false,
+        "official": false,
+        "raw_url": "https://www.twitch.tv/csgo_mc"
+      },
+      {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "language": "en",
+        "main": true,
+        "official": true,
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      }
+    ],
+    "streams": {
+      "english": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "official": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "russian": {
+        "embed_url": "https://player.twitch.tv/?channel=csgo_mc",
+        "raw_url": "https://www.twitch.tv/csgo_mc"
+      }
+    },
+    "winner_id": 3209,
+    "slug": "astralis-vs-evil-geniuses-2022-03-30",
+    "draw": false,
+    "status": "finished",
+    "league_id": 4568,
+    "detailed_stats": true,
+    "original_scheduled_at": "2022-03-30T17:30:00Z",
+    "scheduled_at": "2022-03-30T17:30:00Z",
+    "winner": {
+      "acronym": null,
+      "id": 3209,
+      "image_url": "https://cdn.pandascore.co/images/team/image/3209/ASTRALIS.png",
+      "location": "DK",
+      "modified_at": "2022-03-01T18:17:07Z",
+      "name": "Astralis",
+      "slug": "astralis"
+    },
+    "serie_id": 4417,
+    "opponents": [
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3209,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3209/ASTRALIS.png",
+          "location": "DK",
+          "modified_at": "2022-03-01T18:17:07Z",
+          "name": "Astralis",
+          "slug": "astralis"
+        },
+        "type": "Team"
+      },
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 126233,
+          "image_url": "https://cdn.pandascore.co/images/team/image/126233/10399.png",
+          "location": "US",
+          "modified_at": "2022-03-13T13:09:11Z",
+          "name": "Evil Geniuses",
+          "slug": "evil-geniuses-csgo"
+        },
+        "type": "Team"
+      }
+    ],
+    "begin_at": "2022-03-30T17:32:36Z",
+    "modified_at": "2022-03-30T19:40:15Z",
+    "name": "Astralis vs Evil Geniuses",
+    "end_at": "2022-03-30T19:35:47Z",
+    "number_of_games": 3,
+    "official_stream_url": "https://www.twitch.tv/esl_csgo",
+    "game_advantage": null,
+    "videogame": { "id": 3, "name": "CS:GO", "slug": "cs-go" },
+    "tournament_id": 7600
+  },
+  {
+    "serie": {
+      "begin_at": "2022-03-09T11:30:00Z",
+      "description": null,
+      "end_at": null,
+      "full_name": "Season 15 2022",
+      "id": 4417,
+      "league_id": 4568,
+      "modified_at": "2022-03-01T15:30:04Z",
+      "name": null,
+      "season": "15",
+      "slug": "cs-go-esl-pro-league-season-15-2022",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": null,
+      "year": 2022
+    },
+    "rescheduled": true,
+    "results": [
+      { "score": 0, "team_id": 3310 },
+      { "score": 2, "team_id": 3246 }
+    ],
+    "tournament": {
+      "begin_at": "2022-03-30T10:30:00Z",
+      "end_at": null,
+      "id": 7600,
+      "league_id": 4568,
+      "live_supported": true,
+      "modified_at": "2022-03-30T07:34:20Z",
+      "name": "Group D",
+      "prizepool": null,
+      "serie_id": 4417,
+      "slug": "cs-go-esl-pro-league-season-15-2022-group-d",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": "Team"
+    },
+    "games": [
+      {
+        "begin_at": "2022-03-30T14:26:58Z",
+        "complete": true,
+        "detailed_stats": true,
+        "end_at": "2022-03-30T15:14:15Z",
+        "finished": true,
+        "forfeit": false,
+        "id": 66203,
+        "length": 2837,
+        "match_id": 623611,
+        "position": 1,
+        "status": "finished",
+        "video_url": null,
+        "winner": { "id": 3246, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": "2022-03-30T15:29:39Z",
+        "complete": true,
+        "detailed_stats": true,
+        "end_at": "2022-03-30T16:39:08Z",
+        "finished": true,
+        "forfeit": false,
+        "id": 66204,
+        "length": 4168,
+        "match_id": 623611,
+        "position": 2,
+        "status": "finished",
+        "video_url": "https://player.twitch.tv/?video=v1441044748&autoplay=true&t=4h51m15s&parent=www.hltv.org",
+        "winner": { "id": 3246, "type": "Team" },
+        "winner_type": "Team"
+      }
+    ],
+    "live_embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+    "videogame_version": null,
+    "league": {
+      "id": 4568,
+      "image_url": "https://cdn.pandascore.co/images/league/image/4568/esl_pro_league.png",
+      "modified_at": "2021-08-23T07:15:00Z",
+      "name": "ESL Pro League",
+      "slug": "cs-go-esl-pro-league",
+      "url": "https://pro.eslgaming.com/csgo/proleague/"
+    },
+    "forfeit": false,
+    "match_type": "best_of",
+    "live": {
+      "opens_at": "2022-03-30T14:11:58Z",
+      "supported": true,
+      "url": "wss://live.pandascore.co/matches/623611"
+    },
+    "id": 623611,
+    "streams_list": [
+      {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "language": "en",
+        "main": true,
+        "official": true,
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      }
+    ],
+    "streams": {
+      "english": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "official": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "russian": { "embed_url": null, "raw_url": null }
+    },
+    "winner_id": 3246,
+    "slug": "complexity-vs-heroic-2022-03-30",
+    "draw": false,
+    "status": "finished",
+    "league_id": 4568,
+    "detailed_stats": true,
+    "original_scheduled_at": "2022-03-30T14:00:00Z",
+    "scheduled_at": "2022-03-30T14:20:00Z",
+    "winner": {
+      "acronym": null,
+      "id": 3246,
+      "image_url": "https://cdn.pandascore.co/images/team/image/3246/Heroic_2019_teamcardimage.png",
+      "location": "DK",
+      "modified_at": "2022-03-15T01:10:33Z",
+      "name": "Heroic",
+      "slug": "heroic"
+    },
+    "serie_id": 4417,
+    "opponents": [
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3310,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3310/600px_complexity_gaming_2019.png",
+          "location": "US",
+          "modified_at": "2022-03-11T07:07:28Z",
+          "name": "Complexity",
+          "slug": "complexity"
+        },
+        "type": "Team"
+      },
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3246,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3246/Heroic_2019_teamcardimage.png",
+          "location": "DK",
+          "modified_at": "2022-03-15T01:10:33Z",
+          "name": "Heroic",
+          "slug": "heroic"
+        },
+        "type": "Team"
+      }
+    ],
+    "begin_at": "2022-03-30T14:26:58Z",
+    "modified_at": "2022-03-30T16:40:22Z",
+    "name": "Complexity vs Heroic",
+    "end_at": "2022-03-30T16:39:07Z",
+    "number_of_games": 3,
+    "official_stream_url": "https://www.twitch.tv/esl_csgo",
+    "game_advantage": null,
+    "videogame": { "id": 3, "name": "CS:GO", "slug": "cs-go" },
+    "tournament_id": 7600
+  },
+  {
+    "serie": {
+      "begin_at": "2022-03-09T11:30:00Z",
+      "description": null,
+      "end_at": null,
+      "full_name": "Season 15 2022",
+      "id": 4417,
+      "league_id": 4568,
+      "modified_at": "2022-03-01T15:30:04Z",
+      "name": null,
+      "season": "15",
+      "slug": "cs-go-esl-pro-league-season-15-2022",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": null,
+      "year": 2022
+    },
+    "rescheduled": false,
+    "results": [
+      { "score": 2, "team_id": 3216 },
+      { "score": 0, "team_id": 3285 }
+    ],
+    "tournament": {
+      "begin_at": "2022-03-30T10:30:00Z",
+      "end_at": null,
+      "id": 7600,
+      "league_id": 4568,
+      "live_supported": true,
+      "modified_at": "2022-03-30T07:34:20Z",
+      "name": "Group D",
+      "prizepool": null,
+      "serie_id": 4417,
+      "slug": "cs-go-esl-pro-league-season-15-2022-group-d",
+      "tier": "a",
+      "winner_id": null,
+      "winner_type": "Team"
+    },
+    "games": [
+      {
+        "begin_at": "2022-03-30T10:32:52Z",
+        "complete": true,
+        "detailed_stats": true,
+        "end_at": "2022-03-30T11:09:06Z",
+        "finished": true,
+        "forfeit": false,
+        "id": 66200,
+        "length": 2173,
+        "match_id": 623610,
+        "position": 1,
+        "status": "finished",
+        "video_url": null,
+        "winner": { "id": 3216, "type": "Team" },
+        "winner_type": "Team"
+      },
+      {
+        "begin_at": "2022-03-30T11:25:45Z",
+        "complete": true,
+        "detailed_stats": true,
+        "end_at": "2022-03-30T14:01:19Z",
+        "finished": true,
+        "forfeit": false,
+        "id": 66201,
+        "length": 9333,
+        "match_id": 623610,
+        "position": 2,
+        "status": "finished",
+        "video_url": "https://player.twitch.tv/?video=v1441044748&autoplay=true&t=57m11s&parent=www.hltv.org",
+        "winner": { "id": 3216, "type": "Team" },
+        "winner_type": "Team"
+      }
+    ],
+    "live_embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+    "videogame_version": null,
+    "league": {
+      "id": 4568,
+      "image_url": "https://cdn.pandascore.co/images/league/image/4568/esl_pro_league.png",
+      "modified_at": "2021-08-23T07:15:00Z",
+      "name": "ESL Pro League",
+      "slug": "cs-go-esl-pro-league",
+      "url": "https://pro.eslgaming.com/csgo/proleague/"
+    },
+    "forfeit": false,
+    "match_type": "best_of",
+    "live": {
+      "opens_at": "2022-03-30T10:17:52Z",
+      "supported": true,
+      "url": "wss://live.pandascore.co/matches/623610"
+    },
+    "id": 623610,
+    "streams_list": [
+      {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "language": "en",
+        "main": true,
+        "official": true,
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      }
+    ],
+    "streams": {
+      "english": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "official": {
+        "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+        "raw_url": "https://www.twitch.tv/esl_csgo"
+      },
+      "russian": { "embed_url": null, "raw_url": null }
+    },
+    "winner_id": 3216,
+    "slug": "natus-vincere-vs-ago-2022-03-30",
+    "draw": false,
+    "status": "finished",
+    "league_id": 4568,
+    "detailed_stats": true,
+    "original_scheduled_at": "2022-03-30T10:30:00Z",
+    "scheduled_at": "2022-03-30T10:30:00Z",
+    "winner": {
+      "acronym": null,
+      "id": 3216,
+      "image_url": "https://cdn.pandascore.co/images/team/image/3216/NATUS_VINCERE.png",
+      "location": "UA",
+      "modified_at": "2022-03-30T07:34:20Z",
+      "name": "Natus Vincere",
+      "slug": "natus-vincere-cs-go"
+    },
+    "serie_id": 4417,
+    "opponents": [
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3216,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3216/NATUS_VINCERE.png",
+          "location": "UA",
+          "modified_at": "2022-03-30T07:34:20Z",
+          "name": "Natus Vincere",
+          "slug": "natus-vincere-cs-go"
+        },
+        "type": "Team"
+      },
+      {
+        "opponent": {
+          "acronym": null,
+          "id": 3285,
+          "image_url": "https://cdn.pandascore.co/images/team/image/3285/AGO_ESPORT.png",
+          "location": "PL",
+          "modified_at": "2022-03-27T18:16:07Z",
+          "name": "AGO",
+          "slug": "ago"
+        },
+        "type": "Team"
+      }
+    ],
+    "begin_at": "2022-03-30T10:32:52Z",
+    "modified_at": "2022-03-30T14:13:32Z",
+    "name": "Natus Vincere vs AGO",
+    "end_at": "2022-03-30T14:01:18Z",
+    "number_of_games": 3,
+    "official_stream_url": "https://www.twitch.tv/esl_csgo",
+    "game_advantage": null,
+    "videogame": { "id": 3, "name": "CS:GO", "slug": "cs-go" },
+    "tournament_id": 7600
+  }
+]

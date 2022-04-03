@@ -1,13 +1,6 @@
 # Round-robin Tiebreaker
 
-Depends on `scryer-prolog`. Install [it](https://github.com/mthom/scryer-prolog) first or adjust dependencies accordingly.
-
-To install scryer-prolog in windows, use wsl2, run the below commands.
-
-```
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-cargo install --git https://github.com/mthom/scryer-prolog
-```
+Depends on `SWI-Prolog`. Run `tiebreaker/run.pl` (it's an executable!) to generate solutions.
 
 ## Problem Description
 

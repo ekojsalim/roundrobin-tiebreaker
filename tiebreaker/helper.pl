@@ -1,4 +1,4 @@
-:- module(helper, [integer_si/1, (#=)/3, (#<)/3, memo/1, flatten/2, take/3]).
+:- module(helper, [integer_si/1, (#=)/3, (#<)/3, memo/1, flatten/2, take/3, zo_t/2]).
 
 :- use_module(library(clpfd)).
 
