@@ -18,7 +18,7 @@ class Tiebreaker:
 
     def get_solutions(self) -> None:
         self.prolog.consult(
-            "~/Code/logic/tiebreaker-logic/tiebreaker/tiebreaker")
+            "../tiebreaker/tiebreaker")
         standings = self.prolog.query("standings(S, Rs), maplist(label, Rs)")
         standing_dict = {}
         for standing in standings:
