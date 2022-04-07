@@ -1,6 +1,11 @@
 # Round-robin Tiebreaker
 
-Depends on `SWI-Prolog`. Run `tiebreaker/run.pl` (it's an executable!) to generate solutions.
+To use the app, consider using a linux distribution. If you are using Windows, it is encouraged for you to use a WSL.
+First, install `python3`. Make sure `pyswip` and `pyeda` library is installed through pip.
+Make sure `SWI-Prolog` is also installed in your OS.
+
+To run the parser, you can use `python3 parse-pandascore.py ../data/epls15/raw/a.json ../data/epls15/d/3.json`. The parser takes 2 arguments, the input and output file. The input file is obtained from Pandascore API.
+
 
 ## Problem Description
 
