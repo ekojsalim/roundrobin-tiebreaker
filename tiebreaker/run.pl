@@ -155,9 +155,9 @@ translate_winner([_,TeamB]-0):-
 translate_winner(_-2).
 
 translate_score(_-1):-
-    write(' dengan skor 2-0').
+    write(' melalui pertandingan 2 ronde').
 translate_score(_-0):-
-    write(' dengan skor 2-1').
+    write(' melalui pertandingan 3 ronde').
 translate_score(_-2).
 
 translate_result_minterm_partial_for_rank(_-[2-2], _).
