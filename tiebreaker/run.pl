@@ -131,7 +131,7 @@ get_list_rank([T1,T2,T3,T4,T5,T6], Listrank):-
     team(T4, Team4),
     team(T5, Team5),
     team(T6, Team6),
-    list_rank([1-Team6, 2-Team5, 3-Team4, 4-Team3, 5-Team2, 6-Team1], Listrank).
+    list_rank([T6-Team6, T5-Team5, T4-Team4, T3-Team3, T2-Team2, T1-Team1], Listrank).
 process_result_tiebreak(InputData,Tiebreaklist, Finalres):-
     process_result_tiebreak(InputData,Tiebreaklist,[], Finalres).
 process_result_tiebreak(_, [], Finalres, Finalres).
@@ -152,47 +152,49 @@ translate_winner([_,TeamB]-0):-
 translate_winner(_-2).
 
 translate_score(_-1):-
-    write('dengan ronde sebanyak '), write(2), write(' kali').
+    write(' dengan skor 2-0').
 translate_score(_-0):-
-    write('dengan ronde sebanyak '), write(3), write(' kali').
+    write(' dengan skor 2-1').
 translate_score(_-2).
 
 translate_result_minterm_partial_for_rank(_-[2-2]).
 translate_result_minterm_partial_for_rank([TeamA,TeamB]-[Winner,Score]):-%[4,6]-[2,0]
     \+Winner+Score is 4, !,
     write('Pertandingan team '),
-    write(TeamA), write(' Vs team '), write(TeamB),
-    translate_winner([TeamA,TeamB]-Winner),write(' '),
-    translate_score([TeamA,TeamB]-Score), nl.
+    write(TeamA), write(' VS team '), write(TeamB),
+    translate_winner([TeamA,TeamB]-Winner),
+    translate_score([TeamA,TeamB]-Score).
 
-translate_result_minterm([[TeamA,TeamB]-[Winner,Score]|Rest]):-
-    team(TeamA, NamaTimA),
-    team(TeamB, NamaTimB),
-    translate_result_minterm_partial_for_rank([NamaTimA,NamaTimB]-[Winner,Score]),
-    \+Winner+Score is 4, !, write(' dan '),nl,
-    translate_result_minterm(Rest).
-translate_result_minterm([[TeamA,TeamB]-[2,2]|Rest]):-
+translate_result_minterm([[TeamA,TeamB]-[2,2]|Rest], FirstOutted):-
     team(TeamA, NamaTimA),
     team(TeamB, NamaTimB),!,
-    translate_result_minterm_partial_for_rank([NamaTimA,NamaTimB]-[2,2]),
-    translate_result_minterm(Rest).
-translate_result_minterm([]).
+    % translate_result_minterm_partial_for_rank([NamaTimA,NamaTimB]-[2,2]),
+    translate_result_minterm(Rest, true).
 
-translate_result_sop([HeadMinterm|RestMinterm]):-
-    translate_result_minterm(HeadMinterm),
-    nl, write('atau'),nl,
-    translate_result_sop(RestMinterm).
-translate_result_sop([]).
+translate_result_minterm([[TeamA,TeamB]-[Winner,Score]|Rest], FirstOutted):-
+    team(TeamA, NamaTimA),
+    team(TeamB, NamaTimB),
+    ((FirstOutted = true) -> (write(' dan ')); (write(''))),
+    translate_result_minterm_partial_for_rank([NamaTimA,NamaTimB]-[Winner,Score]),
+    \+Winner+Score is 4, !,
+    translate_result_minterm(Rest, true).
+translate_result_minterm([], _).
+
+translate_result_sop([HeadMinterm|RestMinterm], FirstOutted):-
+    nl, ((FirstOutted = true) -> (write('atau')); (write(''))), nl,
+    write('('), translate_result_minterm(HeadMinterm, false), write(')'),
+    translate_result_sop(RestMinterm, true).
+translate_result_sop([], _).
 
 translate_rank_result(Rank-Description):-
-    write('Kemungkinan peringkat yang akan terjadi'),nl,
+    write('Kemungkinan peringkat yang akan terjadi (Peringkat teratas juara pertama):'),nl,
     get_list_rank(Rank, ListRankTim),
     maplist(writeln, ListRankTim),
-    write('Dengan syarat kondisi hasil pertandingan: '), nl,
-    translate_result_sop(Description).
+    write('Dengan syarat kondisi hasil pertandingan: '),
+    translate_result_sop(Description, false).
 translate_all([Head|Rest]):-
     translate_rank_result(Head),
-    write('#########################'),nl,
+    nl, write('#########################'),nl,
     translate_all(Rest).
 translate_all([]):- write('itulah semua kemungkinan yang mungkin terjadi').    
 print_list_kode_dan_nama_tim:-
