@@ -187,7 +187,7 @@ translate_result_minterm([[TeamA,TeamB]-[Winner,Score]|Rest], FirstOutted, Index
 translate_result_minterm([], _, _).
 
 translate_result_sop([HeadMinterm|RestMinterm], FirstOutted):-
-    nl, ((FirstOutted = true) -> (write('atau')); (write(''))), nl,
+    nl, ((FirstOutted = true) -> (write('atau')); (write(''))),nl,
     write('--\n'), translate_result_minterm(HeadMinterm, false, 1), write('.\n--'),
     translate_result_sop(RestMinterm, true).
 translate_result_sop([], _).
@@ -195,17 +195,27 @@ translate_result_sop([], _).
 tulis(NomorTim-NamaTim-Warna):-
     ansi_format([bold,fg(Warna)],'~w',[NomorTim]), write('-'),
     ansi_format([bold,fg(black)],'~w',[NamaTim]), nl.
-translate_rank_result(Rank-Description):-
-    write('Kemungkinan peringkat yang akan terjadi (Peringkat teratas juara pertama):'),nl,
+
+print_all_rank(Rank):-
+    write('Kemungkinan peringkat yang akan terjadi (Peringkat teratas juara pertama):'),
+    nl,
     get_list_rank(Rank, ListRankTim),
-    maplist(tulis, ListRankTim),
-    write('Dengan syarat kondisi hasil pertandingan: '),
+    maplist(tulis, ListRankTim).
+
+translate_rank_result(Rank-Description, ShowRank, Message):-
+    ((ShowRank = true)->(
+        print_all_rank(Rank),
+        write('Dengan syarat kondisi hasil pertandingan: '))
+    ;(
+        write(Message))
+    ),
     translate_result_sop(Description, false).
-translate_all([Head|Rest]):-
-    translate_rank_result(Head),
+
+translate_all([Head|Rest], ShowRank, Message):-
+    translate_rank_result(Head, ShowRank, Message),
     nl, write('#########################'),nl,
-    translate_all(Rest).
-translate_all([]):- write('itulah semua kemungkinan yang mungkin terjadi').    
+    translate_all(Rest, ShowRank, Message).
+translate_all([], _, _):- write('itulah semua kemungkinan yang mungkin terjadi').    
 print_list_kode_dan_nama_tim:-
     write('1. '), team(1, NamaTim1), write(NamaTim1), nl,
     write('2. '), team(2, NamaTim2), write(NamaTim2), nl,
@@ -213,6 +223,13 @@ print_list_kode_dan_nama_tim:-
     write('4. '), team(4, NamaTim4), write(NamaTim4), nl,
     write('5. '), team(5, NamaTim5), write(NamaTim5), nl,
     write('6. '), team(6, NamaTim6), write(NamaTim6), nl.
+
+
+merge_output([], []).
+merge_output([_-Desc | Rest], FinalT) :-
+    merge_output(Rest, NextT),
+    append(Desc, NextT, FinalT).
+
 pilihan_kode(1):-
     write('Menampilkan hasil standing'),nl,
     setof(S-Rs, (standings(S, Rs), maplist(label, Rs)), L),
@@ -220,7 +237,7 @@ pilihan_kode(1):-
     results(Input),
     kelompokin_output(L, T),
     process_result_tiebreak(Input, T, Finalres),
-    translate_all(Finalres).
+    translate_all(Finalres, true, "Semua").
 
 pilihan_kode(2):-
     write('Anda perlu memilih tim mana sehingga kondisi dan peringkat tim tersebut LOLOS akan ditampilkan'),nl,
@@ -230,11 +247,17 @@ pilihan_kode(2):-
     team(KodeTim, NamaTim),
     write('Tim '), write(NamaTim), write(' berhasil terpilih.'),nl,
     write('Menampilkan hasil may_qualify dari tim '), write(NamaTim), nl,
-    setof(S-Rs, (may_qualify(KodeTim, S, Rs), maplist(label, Rs)), L),
-    results(Input),
-    kelompokin_output(L, T),
-    process_result_tiebreak(Input, T, Finalres),
-    translate_all(Finalres).
+    (setof(S-Rs, (may_qualify(KodeTim, S, Rs), maplist(label, Rs)), L)-> (
+        results(Input),
+        kelompokin_output(L, T),
+        merge_output(T, NextT),
+        process_result_tiebreak(Input, [[]-NextT], Finalres),
+        atom_concat(NamaTim, ' akan lolos bila:', Message),
+        translate_all(Finalres, false, Message)
+    ); 
+    atom_concat('Tim ', NamaTim, Message1),
+    atom_concat(Message1, ' tidak mungkin lolos.', Message),
+    write(Message)).
 
 pilihan_kode(3):-
     write('Anda perlu memilih tim mana sehingga kondisi dan peringkat tim tersebut TIDAK LOLOS akan ditampilkan'),nl,
@@ -244,11 +267,17 @@ pilihan_kode(3):-
     team(KodeTim, NamaTim),
     write('Tim '), write(NamaTim), write(' berhasil terpilih.'),nl,
     write('Menampilkan hasil may_qualify dari tim '), write(NamaTim), nl,
-    setof(S-Rs, (may_not_qualify(KodeTim, S, Rs), maplist(label, Rs)), L),
-    results(Input),
-    kelompokin_output(L, T),
-    process_result_tiebreak(Input, T, Finalres),
-    translate_all(Finalres).
+    (setof(S-Rs, (may_not_qualify(KodeTim, S, Rs), maplist(label, Rs)), L) -> (
+        results(Input),
+        kelompokin_output(L, T),
+        merge_output(T, NextT),
+        process_result_tiebreak(Input, [[]-NextT], Finalres),
+        atom_concat(NamaTim, ' tidak lolos bila:', Message),
+        translate_all(Finalres, false, Message)
+    ); 
+    atom_concat('Tim ', NamaTim, Message1),
+    atom_concat(Message1, ' pasti lolos.', Message),
+    write(Message)).
 
 main1 :-
     write('Kode 1, akan menampilkan hasil standing'),nl,
