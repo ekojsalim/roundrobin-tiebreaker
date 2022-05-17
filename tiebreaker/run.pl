@@ -165,19 +165,19 @@ translate_result_minterm_partial_for_rank([TeamA,TeamB]-[Winner,Score]):-%[4,6]-
     translate_winner([TeamA,TeamB]-Winner),
     translate_score([TeamA,TeamB]-Score).
 
-translate_result_minterm([[TeamA,TeamB]-[2,2]|Rest], FirstOutted):-
-    team(TeamA, NamaTimA),
-    team(TeamB, NamaTimB),!,
+translate_result_minterm([[_,_]-[2,2]|Rest], FirstOutted):-
+    % team(TeamA, NamaTimA),
+    % team(TeamB, NamaTimB),!,
     % translate_result_minterm_partial_for_rank([NamaTimA,NamaTimB]-[2,2]),
-    translate_result_minterm(Rest, true).
+    !, translate_result_minterm(Rest, FirstOutted).
 
 translate_result_minterm([[TeamA,TeamB]-[Winner,Score]|Rest], FirstOutted):-
     team(TeamA, NamaTimA),
     team(TeamB, NamaTimB),
     ((FirstOutted = true) -> (write(' dan ')); (write(''))),
     translate_result_minterm_partial_for_rank([NamaTimA,NamaTimB]-[Winner,Score]),
-    \+Winner+Score is 4, !,
-    translate_result_minterm(Rest, true).
+    % \+Winner+Score is 4,
+    !, translate_result_minterm(Rest, true).
 translate_result_minterm([], _).
 
 translate_result_sop([HeadMinterm|RestMinterm], FirstOutted):-
