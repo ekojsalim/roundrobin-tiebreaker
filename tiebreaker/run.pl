@@ -131,7 +131,9 @@ get_list_rank([T1,T2,T3,T4,T5,T6], Listrank):-
     team(T4, Team4),
     team(T5, Team5),
     team(T6, Team6),
-    list_rank([T6-Team6, T5-Team5, T4-Team4, T3-Team3, T2-Team2, T1-Team1], Listrank).
+    WinningColor = green,
+    LosingColor = red,
+    list_rank([T6-Team6-WinningColor, T5-Team5-WinningColor, T4-Team4-WinningColor, T3-Team3-LosingColor, T2-Team2-LosingColor, T1-Team1-LosingColor], Listrank).
 process_result_tiebreak(InputData,Tiebreaklist, Finalres):-
     process_result_tiebreak(InputData,Tiebreaklist,[], Finalres).
 process_result_tiebreak(_, [], Finalres, Finalres).
@@ -158,9 +160,11 @@ translate_score(_-0):-
     write(' dengan skor 2-1').
 translate_score(_-2).
 
-translate_result_minterm_partial_for_rank(_-[2-2]).
-translate_result_minterm_partial_for_rank([TeamA,TeamB]-[Winner,Score]):-%[4,6]-[2,0]
+translate_result_minterm_partial_for_rank(_-[2-2], _).
+translate_result_minterm_partial_for_rank([TeamA,TeamB]-[Winner,Score], Index):-%[4,6]-[2,0]
     \+Winner+Score is 4, !,
+    write(Index),
+    write('. '),
     write('Pertandingan team '),
     write(TeamA), write(' VS team '), write(TeamB),
     translate_winner([TeamA,TeamB]-Winner),
@@ -169,28 +173,32 @@ translate_result_minterm_partial_for_rank([TeamA,TeamB]-[Winner,Score]):-%[4,6]-
 translate_result_minterm([[_,_]-[2,2]|Rest], FirstOutted):-
     % team(TeamA, NamaTimA),
     % team(TeamB, NamaTimB),!,
-    % translate_result_minterm_partial_for_rank([NamaTimA,NamaTimB]-[2,2]),
+    % translate_result_minterm_partial_for_rank([NamaTimA,NamaTimB]-[2,2], nol),
     !, translate_result_minterm(Rest, FirstOutted).
 
-translate_result_minterm([[TeamA,TeamB]-[Winner,Score]|Rest], FirstOutted):-
+translate_result_minterm([[TeamA,TeamB]-[Winner,Score]|Rest], FirstOutted, Index):-
     team(TeamA, NamaTimA),
     team(TeamB, NamaTimB),
-    ((FirstOutted = true) -> (write(' dan ')); (write(''))),
-    translate_result_minterm_partial_for_rank([NamaTimA,NamaTimB]-[Winner,Score]),
+    ((FirstOutted = true) -> (write('; dan\n')); (write(''))),
+    translate_result_minterm_partial_for_rank([NamaTimA,NamaTimB]-[Winner,Score], Index),
     % \+Winner+Score is 4,
-    !, translate_result_minterm(Rest, true).
-translate_result_minterm([], _).
+    NextIndex is Index + 1,
+    !, translate_result_minterm(Rest, true, NextIndex).
+translate_result_minterm([], _, _).
 
 translate_result_sop([HeadMinterm|RestMinterm], FirstOutted):-
     nl, ((FirstOutted = true) -> (write('atau')); (write(''))), nl,
-    write('('), translate_result_minterm(HeadMinterm, false), write(')'),
+    write('--\n'), translate_result_minterm(HeadMinterm, false, 1), write('\n--'),
     translate_result_sop(RestMinterm, true).
 translate_result_sop([], _).
 
+tulis(NomorTim-NamaTim-Warna):-
+    ansi_format([bold,fg(Warna)],'~w',[NomorTim]), write('-'),
+    ansi_format([bold,fg(black)],'~w',[NamaTim]), nl.
 translate_rank_result(Rank-Description):-
     write('Kemungkinan peringkat yang akan terjadi (Peringkat teratas juara pertama):'),nl,
     get_list_rank(Rank, ListRankTim),
-    maplist(writeln, ListRankTim),
+    maplist(tulis, ListRankTim),
     write('Dengan syarat kondisi hasil pertandingan: '),
     translate_result_sop(Description, false).
 translate_all([Head|Rest]):-
