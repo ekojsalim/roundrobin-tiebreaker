@@ -208,6 +208,7 @@ print_list_kode_dan_nama_tim:-
 pilihan_kode(1):-
     write('Menampilkan hasil standing'),nl,
     setof(S-Rs, (standings(S, Rs), maplist(label, Rs)), L),
+    % write(L),
     results(Input),
     kelompokin_output(L, T),
     process_result_tiebreak(Input, T, Finalres),

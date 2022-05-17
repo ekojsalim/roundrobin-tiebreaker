@@ -25,13 +25,25 @@ unknown_results(Rs, URs) :-
     memo(instantiated_result(IRs)),
     ord_subtract(ORs, IRs, URs).
 
+unique_matches([]).
+unique_matches([Head|Rest]):-
+    \+member(Head,Rest),
+    unique_matches(Rest).
+
+take_matches([], []).
+take_matches([[T1, T2, _, _, _] | Rest], Finalres) :-
+    take_matches(Rest, Nextres),
+    ((T1 < T2) ->
+    (append([[T1, T2]], Nextres, Finalres))
+    ;(append([[T2, T1]], Nextres, Finalres))
+    ).
 % CLP(FD) constraints for a result
 % We only concern ourselves with set score and not round-score
 valid_result(R) :-
     R = [T1, T2, W, S1, S2 | _],
     % matchup
     [T1, T2] ins 1..6,
-    T1 #< T2,
+    % T1 #< T2,
     % winner
     W in 1..6,
     (W #= T1 #\/ W #= T2),
@@ -40,8 +52,17 @@ valid_result(R) :-
     S2 in 0..1.
 
 valid_results(Rs) :-
+    ansi_format([bold,fg(red)],'~w',["validasi data...\n"]),
+    ansi_format([bold,fg(blue)],'~w',["panjang data 15, "]),
     length(Rs, 15),
-    maplist(valid_result, Rs).
+    ansi_format([bold,fg(green)],'~w',["OK\n"]),
+    take_matches(Rs, Matches_only),
+    ansi_format([bold,fg(blue)],'~w',["pertandingan distinct, "]),
+    unique_matches(Matches_only),
+    ansi_format([bold,fg(green)],'~w',["OK\n"]),
+    ansi_format([bold,fg(blue)],'~w',["input pertandingan, "]),
+    maplist(valid_result, Rs),
+    ansi_format([bold,fg(green)],'~w',["OK\n"]).
 
 % Value Metapredicates
 % For brevity and abstraction, we create `specific_value` and `overall_value`
@@ -134,7 +155,7 @@ team_sort(VP, Ts, Rs, Gs) :-
 % high level logic
 standings(S, Rs) :-
     results(Rs),
-    valid_results(Rs),
+    ((valid_results(Rs)) -> (write("Data valid"),nl);(ansi_format([bold,fg(red)],'~w',["Not OK\n"]), halt)),
     tiebreakers(Ps),
     tiebreaking_team_sort([1,2,3,4,5,6], Rs, Ps, S).
     % flatten(Os, FOs),
