@@ -230,6 +230,16 @@ merge_output([_-Desc | Rest], FinalT) :-
     merge_output(Rest, NextT),
     append(Desc, NextT, FinalT).
 
+write_pasti_lolos(NamaTim) :-
+    atom_concat('Tim ', NamaTim, Message1),
+    atom_concat(Message1, ' pasti lolos.', Message),
+    write(Message).
+
+write_pasti_tidak_lolos(NamaTim):-
+    atom_concat('Tim ', NamaTim, Message1),
+    atom_concat(Message1, ' tidak mungkin lolos.', Message),
+    write(Message).
+
 pilihan_kode(1):-
     write('Menampilkan hasil standing'),nl,
     setof(S-Rs, (standings(S, Rs), maplist(label, Rs)), L),
@@ -247,6 +257,7 @@ pilihan_kode(2):-
     team(KodeTim, NamaTim),
     write('Tim '), write(NamaTim), write(' berhasil terpilih.'),nl,
     write('Menampilkan hasil may_qualify dari tim '), write(NamaTim), nl,
+    (may_not_qualify(KodeTim, _, _) -> write(''); write_pasti_lolos(NamaTim), halt),
     (setof(S-Rs, (may_qualify(KodeTim, S, Rs), maplist(label, Rs)), L)-> (
         results(Input),
         kelompokin_output(L, T),
@@ -255,9 +266,7 @@ pilihan_kode(2):-
         atom_concat(NamaTim, ' akan lolos bila:', Message),
         translate_all(Finalres, false, Message)
     ); 
-    atom_concat('Tim ', NamaTim, Message1),
-    atom_concat(Message1, ' tidak mungkin lolos.', Message),
-    write(Message)).
+    write_pasti_tidak_lolos(NamaTim)).
 
 pilihan_kode(3):-
     write('Anda perlu memilih tim mana sehingga kondisi dan peringkat tim tersebut TIDAK LOLOS akan ditampilkan'),nl,
@@ -267,6 +276,7 @@ pilihan_kode(3):-
     team(KodeTim, NamaTim),
     write('Tim '), write(NamaTim), write(' berhasil terpilih.'),nl,
     write('Menampilkan hasil may_qualify dari tim '), write(NamaTim), nl,
+    (may_qualify(KodeTim, _, _) -> (write('')); write_pasti_tidak_lolos(NamaTim), halt),
     (setof(S-Rs, (may_not_qualify(KodeTim, S, Rs), maplist(label, Rs)), L) -> (
         results(Input),
         kelompokin_output(L, T),
@@ -275,9 +285,7 @@ pilihan_kode(3):-
         atom_concat(NamaTim, ' tidak lolos bila:', Message),
         translate_all(Finalres, false, Message)
     ); 
-    atom_concat('Tim ', NamaTim, Message1),
-    atom_concat(Message1, ' pasti lolos.', Message),
-    write(Message)).
+    write_pasti_lolos(NamaTim)).
 
 main1 :-
     write('Kode 1, akan menampilkan hasil standing'),nl,

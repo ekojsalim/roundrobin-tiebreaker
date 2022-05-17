@@ -152,12 +152,17 @@ team_sort(VP, Ts, Rs, Gs) :-
     group_pairs_by_key(SortedTVPairs, GroupedTVPairs), % group them
     pairs_values(GroupedTVPairs, Gs). % get only the teams
 
+validate_result(Rs) :- 
+    ((valid_results(Rs)) -> (write("Data valid"),nl);(ansi_format([bold,fg(red)],'~w',["Not OK\n"]), halt)).
+    
+
 % high level logic
 standings(S, Rs) :-
     results(Rs),
-    ((valid_results(Rs)) -> (write("Data valid"),nl);(ansi_format([bold,fg(red)],'~w',["Not OK\n"]), halt)),
+    validate_result(Rs),
     tiebreakers(Ps),
     tiebreaking_team_sort([1,2,3,4,5,6], Rs, Ps, S).
+    % write(Rs),
     % flatten(Os, FOs),
     % reverse(Os, S).
 
