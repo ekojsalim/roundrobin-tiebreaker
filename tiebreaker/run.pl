@@ -170,11 +170,11 @@ translate_result_minterm_partial_for_rank([TeamA,TeamB]-[Winner,Score], Index):-
     translate_winner([TeamA,TeamB]-Winner),
     translate_score([TeamA,TeamB]-Score).
 
-translate_result_minterm([[_,_]-[2,2]|Rest], FirstOutted):-
+translate_result_minterm([[_,_]-[2,2]|Rest], FirstOutted, Index):-
     % team(TeamA, NamaTimA),
     % team(TeamB, NamaTimB),!,
     % translate_result_minterm_partial_for_rank([NamaTimA,NamaTimB]-[2,2], nol),
-    !, translate_result_minterm(Rest, FirstOutted).
+    !, translate_result_minterm(Rest, FirstOutted, Index).
 
 translate_result_minterm([[TeamA,TeamB]-[Winner,Score]|Rest], FirstOutted, Index):-
     team(TeamA, NamaTimA),
@@ -188,7 +188,7 @@ translate_result_minterm([], _, _).
 
 translate_result_sop([HeadMinterm|RestMinterm], FirstOutted):-
     nl, ((FirstOutted = true) -> (write('atau')); (write(''))), nl,
-    write('--\n'), translate_result_minterm(HeadMinterm, false, 1), write('\n--'),
+    write('--\n'), translate_result_minterm(HeadMinterm, false, 1), write('.\n--'),
     translate_result_sop(RestMinterm, true).
 translate_result_sop([], _).
 
