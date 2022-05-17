@@ -223,16 +223,16 @@ quine(N, Minterms, Output) :-
     % Get TwoPower
     TwoPower is 2 ** N - 1,
     
-    % Split the minterms using comma
-    split_string(Minterms, ",", ",", SubStrings),
+    % % Split the minterms using comma
+    % split_string(Minterms, ",", ",", SubStrings),
     
-    % From strings to numbers
-    maplist(number_string, Numbers, SubStrings),
-    
+    % % From strings to numbers
+    % maplist(number_string, Numbers, SubStrings),
+    % write(Minterms),
     % Asserts all the elements of minterms is between it
-    maplist(call(between, 0, TwoPower), Numbers),
+    maplist(call(between, 0, TwoPower), Minterms),
     NMinusOne is N - 1,
-    maplist(call(number_binarylist, NMinusOne), Numbers, BinaryList),
+    maplist(call(number_binarylist, NMinusOne), Minterms, BinaryList),
     
     % Output = BinaryList,
     iterate_quine(BinaryList, PrimeImplicants),

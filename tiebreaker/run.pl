@@ -138,8 +138,9 @@ process_result_tiebreak(_, [], Finalres, Finalres).
 process_result_tiebreak(InputData,[FlattenRank-PredMatchResult|Tiebreaklist],Temp, Finalres):-
     process_input_and_all_value_from_tiebreak(InputData, PredMatchResult, Pair-IndexMinterm),
     length(Pair, N), M is 2*N,
-    atomic_list_concat(IndexMinterm, ',', IndexMintermInString),
-    quine(M, IndexMintermInString, ResultQuine),
+    % print(IndexMinterm),
+    quine(M, IndexMinterm, ResultQuine),
+    % write(ResultQuine),
     pairing_sop_and_key_input(Pair, ResultQuine, ResultReadyToTranslate),
     process_result_tiebreak(InputData,Tiebreaklist,[FlattenRank-ResultReadyToTranslate|Temp], Finalres).
 
